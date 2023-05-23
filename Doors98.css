@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(204, 181, 152);
+}
+#powerBNT{
+    background-color: rgb(204, 181, 152);
+    border-color: rgb(204, 181, 152);
+    height: max-content;
+    width: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border:.5vh solid rgb(204, 181, 152);
+    
+}
+#powerbnt{
+    background-color: #214b1d;
+    border-radius: 50%;
+    height: 35vw;
+    width: 35vw;
+    border:.1vh solid #214b1d;
+    box-shadow: 2vh 1vh 1vh #7a7462, 1vh 1vh 1vh #7a7462;
+}
+
+#PowerBntICON{
+    color: rgb(44, 44, 44);
+    font-size: 25vw;
+    text-align: center;
+    border-color: black;
+    
+    
+}
+
+#Doorslogo{
+    width: 12vw;
+  height: 23vh;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  border: 1vh solid rgb(49,143,207);
+}
+#intellogo{
+    width: 12vw;
+  height: 23vh;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  
+}
