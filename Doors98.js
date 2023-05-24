@@ -123,7 +123,7 @@ function biosOPT(){
     bios.style.display = "none"
 
     //display bios Options
-    
+    alert('u are in the bios options')
 
 }
 
@@ -179,9 +179,7 @@ function bios1(){
  }
 
  //start doors startup process
- function DoorsStartup(){
-alert('starting up')
- }
+ 
 
 
 
@@ -192,12 +190,15 @@ setTimeout(Biosexit,1)
 //start the doors startup
 setTimeout(DoorsStartup,2000)
 
-
-function DoorsStartup(){
-    alert('starting up')
-     }
 function Biosexit(){
     biosOPTS.style.display='none'
 }
 
 }
+
+
+
+//start up doors98
+function DoorsStartup(){
+    alert('starting up Doors98')
+     }
