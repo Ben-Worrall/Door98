@@ -1,6 +1,9 @@
 body{
     background-color: rgb(204, 181, 152);
 }
+
+/* power button screen */
+
 #powerBNT{
     background-color: rgb(204, 181, 152);
     border-color: rgb(204, 181, 152);
@@ -48,4 +51,27 @@ body{
   right: 0;
   position: absolute;
   
+}
+
+
+
+
+/* bios*/
+#bios{
+    color: white;
+    font-size: 3vh;
+}
+#bios p{
+    margin-top: .01vh;
+    margin-bottom: .01vh;
+}
+#bios div{
+    margin-top: .01vh;
+    
+}
+
+#GatewayBiosPic{
+    height: 24vh;
+    width: 25vw;
+    margin-top: .01vh;
 }

@@ -4,6 +4,9 @@ powerbnt.addEventListener("mousedown", ClickedDown)
 powerbnt.addEventListener("mouseup", ClickedUp)
 
 
+//get elements
+var bios = document.getElementById('bios')
+
 function ClickedDown(){
     powerbnt.style.boxShadow = '3vh 2vh 2vh #7a7462, 3vh 2vh 2vh #7a7462'
     powerbnt.style.height = '32.5vw'
@@ -28,7 +31,8 @@ document.getElementById("powerBntScreen").style.display = "none"
 document.body.style.backgroundColor = "black"
 
 
-
+//display bios
+bios.style.display = ""
 
 
 
