@@ -58,20 +58,21 @@ body{
 
 /* bios*/
 #bios{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 3vh;
 }
+
 #bios p{
     margin-top: .01vh;
     margin-bottom: .01vh;
 }
-#bios div{
-    margin-top: .01vh;
-    
-}
+
 
 #GatewayBiosPic{
     height: 24vh;
     width: 25vw;
     margin-top: .01vh;
+}
+#biosF1{
+    margin-top: 10vh;
 }
