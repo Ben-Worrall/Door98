@@ -28,9 +28,10 @@ body{
     font-size: 25vw;
     text-align: center;
     border-color: black;
-    
-    
+    text-shadow:0vh 0vh 1vh rgb(34, 34, 34),0vh 0vh 1vh rgb(34, 34, 34);
 }
+    
+
 
 #Doorslogo{
     width: 12vw;
