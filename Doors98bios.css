@@ -76,3 +76,14 @@ body{
 #biosF2{
     margin-top: 10vh;
 }
+
+
+
+
+/* bios OPTS*/
+#biosOPTS{
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    border: 1vh solid blue;
+}

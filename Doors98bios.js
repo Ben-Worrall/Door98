@@ -56,13 +56,15 @@ document.onkeydown = function Open(event){
 
     if(window.event && window.event.keyCode == 113)
     {
-        clearTimeout(BiosDissappear)
+        
+        
         //display bios+options
         biosOPT()
     }
     else if(event.which == 113)
     {
-        clearTimeout(BiosDissappear)
+        
+        
         //display bios+options
         biosOPT()
     
@@ -119,11 +121,13 @@ function bios6(){
 
 //load bios + options if user clicks f2 within in time period
 function biosOPT(){
+    clearTimeout(DoorsStartup)
     //hide the bios loadup
     bios.style.display = "none"
 
     //display bios Options
-    alert('u are in the bios options')
+    biosOPTS.style.display = ""
+    document.body.style.backgroundColor= "whitesmoke"
 
 }
 
@@ -178,7 +182,7 @@ function bios1(){
     }
  }
 
- //start doors startup process
+
  
 
 
