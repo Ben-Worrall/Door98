@@ -54,12 +54,12 @@ setTimeout(BiosDissappear,9000)
 //if the user clicks on f2 to get to bios
 document.onkeydown = function Open(event){
 
-    if(window.event && window.event.keyCode == 113)
+    if(event.key === 'F2')
     {
         //display bios+options
         biosOPT()
     }
-    else if(event.which == 113)
+    else if(event.key === 'F2')
     {
         //display bios+options
         biosOPT()
@@ -124,6 +124,21 @@ function biosOPT(){
     //display bios Options
     biosOPTS.style.display = ""
     document.body.style.backgroundColor= "whitesmoke"
+
+
+
+    //if user presses escape to exit biosOPT
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            exitBiosOpt()
+        }
+    });
+    //if user presses f9 to save and exit biosOPT
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'F9') {
+            saveExitBiosOpt()
+        }
+    });
 
 }
 
@@ -195,30 +210,60 @@ function bios1(){
 
 
 
-//make bios dissappear if user DOES click on f2 (if he exits the biosOPTS)
+//if user exits biosOPT then continue oadup Doors98
 function exitBiosOpt(){
-    //hide biosOpt
-setTimeout(Biosexit,1)
-//start the doors startup
-setTimeout(DoorsStartup,2000)
+   
+            BiosExit()
+             //start the doors startup
+            setTimeout( DoorsStartupBiosOPT,2000)
 
-function Biosexit(){
-    biosOPTS.style.display='none'
+            function BiosExit(){
+                biosOPTS.style.display="none"
+                document.body.style.backgroundColor = "black"
+            }
+        
+};
+
+
+//if user SAVES and exits biosOPT then continue oadup Doors98
+function saveExitBiosOpt(){
+    BiosSaveExit()
+    alert('saved and will continue to doors')
+    function BiosSaveExit(){
+        biosOPTS.style.display="none"
+        document.body.style.backgroundColor = "black"
+    }
+    
 }
 
-}
+
 
 
 
 //start up doors98
 function DoorsStartup(){
     //check if user is in teh biosopt else startup doors
-if(bios.style.display = "none"){
+ if(bios.style.display =="none" ){
     return
 } else {
-    alert('starting up Doors98')
+    alert('startin up Dorrs98')
+    //close bios tab and open windows
+    /*
+    window.close()
+    */
 }
 
-    }
+}
+//start up doors98 from biosOPT
+function DoorsStartupBiosOPT(){
+    //check if user is in teh biosopt else startup doors
+ 
+    alert('startin up Dorrs98 from bios')
+    //close bios tab and open windows 
+     /*
+    window.close()
+    */
 
+
+}
 
