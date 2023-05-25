@@ -106,23 +106,38 @@ body{
     font-size: 3vh;
 }
 
-#biosOPTBody{
+#biosOPTAdvacnedBody{
     margin-top: 1vh;
     width:100%;
     border: .1vw solid blue;
+    color: blue;
     display: flex;
+    height: max-content;
+    
 }
 #BioRightSide{
     background-color: whitesmoke;
-    text-align: right;
+    text-align: left;
     display: inline-block;
-    width: 40%;
+    width: 30%;
+    height: max-content;
+    margin-left: 1%;
+    font-size: 110%;
+    font-size: 140%;
     border-right: .4vw solid blue;
+    border-left: .4vw solid blue;
 }
 #BioLeftSide{
     background-color: whitesmoke;
-    border-right: .4vw solid blue;
     display: inline-block;
-    width: 60%;
+    width: 70%;
+    height: max-content;
+    
     text-align: left;
+    font-size: 140%;
+}
+
+#biosKeys{
+    display: flex;
+    font-size: 100%;
 }
