@@ -247,27 +247,48 @@ function DoorsStartup(){
     return
 } else {
     console.log('startin up Doors98')
-    //close bios tab and open windows
+    
 
-    //for live server
-    window.location = 'doors98/doors98Startup.html'
+     //for live server
+     if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+        window.location = 'Doors98Startup/doors98Startup.html'
+    }
+
+    //for file
+    else if(window.location.protocol === "file:"){
+    window.location = 'Doors98Startup/doors98Startup.html'
+    }
     //for github
-    //window.location = 'https://github.com/Ben-Worrall/Doors98/blob/master/Doors98Startup/doors98Startup.html'
+    else{window.location = 'https://github.com/Ben-Worrall/Doors98/blob/master/Doors98Startup/doors98Startup.html'}
     
 }
 
 }
+
+
+
 //start up doors98 from biosOPT
 function DoorsStartupBiosOPT(){
     //check if user is in teh biosopt else startup doors
  
     console.log('startin up Doors98 from bios')
-    //close bios tab and open windows 
+    
+
+
+
+
 
     //for live server
-    window.location = 'doors98/doors98Startup.html'
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+        window.location = 'Doors98Startup/doors98Startup.html'
+    }
+
+    //for file
+    else if(window.location.protocol === "file:"){
+    window.location = 'Doors98Startup/doors98Startup.html'
+    }
     //for github
-    //window.location = 'https://github.com/Ben-Worrall/Doors98/blob/master/Doors98Startup/doors98Startup.html'
+    else{window.location = 'https://github.com/Ben-Worrall/Doors98/blob/master/Doors98Startup/doors98Startup.html'}
     
 
 
