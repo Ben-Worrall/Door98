@@ -279,16 +279,16 @@ function DoorsStartupBiosOPT(){
 
 
     //for live server
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+    if (location.hostname == "localhost" || location.hostname === "127.0.0.1"){
         window.location = 'Doors98Startup/doors98Startup.html'
     }
 
     //for file
-    else if(window.location.protocol === "file:"){
+    else if(window.location.protocol == "file:"){
     window.location = 'Doors98Startup/doors98Startup.html'
     }
     //for github
-    else if(window.location.protocol === "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/blob/master/Doors98Startup/doors98Startup.html'}
+    else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/blob/master/Doors98Startup/doors98Startup.html'}
     
 
 
