@@ -248,7 +248,7 @@ function DoorsStartup(){
 } else {
     console.log('startin up Doors98')
     //close bios tab and open windows
-    window.location = 'https://Ben-Worrall.github.io/Doors98/doors98/doors98Home.html'
+    window.location = 'https://github.com/Ben-Worrall/Doors98/blob/master/doors98/doors98Home.html'
     
 }
 
@@ -259,7 +259,7 @@ function DoorsStartupBiosOPT(){
  
     console.log('startin up Doors98 from bios')
     //close bios tab and open windows 
-    window.location = 'https://Ben-Worrall.github.io/Doors98/doors98/doors98Home.html'
+    window.location = 'https://github.com/Ben-Worrall/Doors98/blob/master/doors98/doors98Home.html'
     
 
 
