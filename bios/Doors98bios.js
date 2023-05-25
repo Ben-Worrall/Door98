@@ -246,11 +246,10 @@ function DoorsStartup(){
  if(bios.style.display =="none" ){
     return
 } else {
-    alert('startin up Dorrs98')
+    console.log('startin up Doors98')
     //close bios tab and open windows
-    /*
-    window.close()
-    */
+    window.location = '/doors98/doors98Home.html'
+    
 }
 
 }
@@ -258,11 +257,10 @@ function DoorsStartup(){
 function DoorsStartupBiosOPT(){
     //check if user is in teh biosopt else startup doors
  
-    alert('startin up Dorrs98 from bios')
+    console.log('startin up Doors98 from bios')
     //close bios tab and open windows 
-     /*
-    window.close()
-    */
+    window.location = '/doors98/doors98Home.html'
+    
 
 
 }
