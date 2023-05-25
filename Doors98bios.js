@@ -259,7 +259,7 @@ function DoorsStartup(){
     window.location = 'doors98Startup/doors98Startup.html'
     }
     //for github
-    else{window.location = 'https://ben-worrall.github.io/Doors98/doors98Startup/index.html'}
+    else{window.location = 'https://Ben-Worrall.github.io/Doors98/doors98Startup/'}
     
 }
 
@@ -288,7 +288,7 @@ function DoorsStartupBiosOPT(){
     window.location = 'doors98Startup/doors98Startup.html'
     }
     //for github
-    else if(document.location.protocol == "https:"){window.location = 'https://ben-worrall.github.io/Doors98/doors98Startup/'}
+    else if(document.location.protocol == "https:"){window.location = 'https://Ben-Worrall.github.io/Doors98/doors98Startup/'}
     
 
 
