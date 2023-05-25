@@ -288,7 +288,7 @@ function DoorsStartupBiosOPT(){
     window.location = 'doors98Startup/doors98Startup.html'
     }
     //for github
-    else if(document.location.protocol == "https:"){window.location = 'doors98Startup/index.html'}
+    else if(document.location.protocol == "https:"){window.location = 'https://ben-Worrall.github.io/Doors98/doors98Startup/index.html'}
     
 
 
