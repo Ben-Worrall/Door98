@@ -85,5 +85,44 @@ body{
     height: 100%;
     width: 100%;
     background-color: whitesmoke;
-    border: 1vh solid blue;
+    
+}
+#bioUtil{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 3vh;
+}
+#bioAdvanced{
+    background-color: blue;
+    color: whitesmoke;
+    display: flex;
+    
+}
+#advance{
+    background-color: whitesmoke;
+    border-radius: 10%;
+    color: blue;
+    margin-left: 15%;
+    font-size: 3vh;
+}
+
+#biosOPTBody{
+    margin-top: 1vh;
+    width:100%;
+    border: .1vw solid blue;
+    display: flex;
+}
+#BioRightSide{
+    background-color: whitesmoke;
+    text-align: right;
+    display: inline-block;
+    width: 40%;
+    border-right: .4vw solid blue;
+}
+#BioLeftSide{
+    background-color: whitesmoke;
+    border-right: .4vw solid blue;
+    display: inline-block;
+    width: 60%;
+    text-align: left;
 }

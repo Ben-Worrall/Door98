@@ -56,15 +56,11 @@ document.onkeydown = function Open(event){
 
     if(window.event && window.event.keyCode == 113)
     {
-        
-        
         //display bios+options
         biosOPT()
     }
     else if(event.which == 113)
     {
-        
-        
         //display bios+options
         biosOPT()
     
@@ -180,6 +176,18 @@ function bios1(){
     
         document.getElementById('bios6').style.color="black"
     }
+
+
+
+
+
+
+
+
+
+
+
+    
  }
 
 
@@ -204,5 +212,13 @@ function Biosexit(){
 
 //start up doors98
 function DoorsStartup(){
+    //check if user is in teh biosopt else startup doors
+if(bios.style.display = "none"){
+    return
+} else {
     alert('starting up Doors98')
-     }
+}
+
+    }
+
+
