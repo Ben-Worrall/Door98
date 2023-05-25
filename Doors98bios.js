@@ -259,7 +259,7 @@ function DoorsStartup(){
     window.location = 'doors98Startup/doors98Startup.html'
     }
     //for github
-    else if(document.location.protocol == "https:"){window.location = '/Doors98/doors98Startup/'}
+    else if(document.location.protocol == "https:"){window.location = 'doors98Startup/doors98Startup.html'}
     
 }
 
@@ -288,7 +288,7 @@ function DoorsStartupBiosOPT(){
     window.location = 'doors98Startup/doors98Startup.html'
     }
     //for github
-    else if(document.location.protocol == "https:"){window.location = '/Doors98/doors98Startup/'}
+    else if(document.location.protocol == "https:"){window.location = 'doors98Startup/doors98Startup.html'}
     
 
 
