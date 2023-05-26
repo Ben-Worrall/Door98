@@ -32,6 +32,12 @@ function ClickedDown(){
 
  //after hitting the power button then show loadup
  function LoadUpBios(){
+
+    //hide and disable left click cursor
+    document.getElementById("html").style.cursor = "none"
+    
+
+
     //hide power button screen
 document.getElementById("powerBntScreen").style.display = "none"
 document.body.style.backgroundColor = "black"
