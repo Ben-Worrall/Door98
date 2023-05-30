@@ -1,6 +1,7 @@
 body{
     margin: 0px;
     padding: 0px;
+    
 }
 
 
@@ -13,6 +14,9 @@ body{
 max-width: 100%
 }
 
+
+
+/* body of doors98 for icons and whatnot*/
 #ContentBody{
 background-color: rgb(0,124,127);
 margin-bottom: 0px;
@@ -20,8 +24,54 @@ position: absolute;
 top: 0;
 width: 100%;
 height: 94vh;
+background: url('/Doors98HomeScreenBackground.png') no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
     
 }
+.iconBody{
+    width: 5%;
+    height: 12%;
+    text-align:center;
+    display:block;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin-bottom: 1px;
+    float:left;
+    position: relative;
+   text-align: center;
+}
+
+.icon-homescreen{
+    
+    width: 100%;
+   
+    
+}
+.icon-text{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    left: 0;
+    right: 0;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* task bar wiht its elements*/
 #TaskBar{
     outline: 0.3vw solid rgb(235, 235, 235);
     background-color: rgb(187, 187, 187);
@@ -32,4 +82,25 @@ height: 94vh;
     margin-right: 0.3vw;
     width: 99.4vw;
     height: 6vh;
+}
+
+
+#Doors98START{
+background: url("/Doors98Start.png");
+background-size:cover;
+background-position: center;
+width: 7%;
+height: 99%;
+}
+
+#time{
+float: right;
+width: 8%;
+height: 99%;
+outline: 0.3vw solid rgb(235, 235, 235);
+display : flex;
+align-items : center;
+justify-content: center;
+
+
 }
