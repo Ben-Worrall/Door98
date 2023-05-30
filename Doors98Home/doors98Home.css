@@ -24,29 +24,30 @@ position: absolute;
 top: 0;
 width: 100%;
 height: 94vh;
-background: url('/Doors98HomeScreenBackground.png') no-repeat center center fixed; 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+background-color: #008080;
+
     
 }
 .iconBody{
     width: 5%;
-    height: 12%;
+    height: 11%;
     text-align:center;
     display:block;
     background-color: transparent;
     border: 1px solid transparent;
-    margin-bottom: 1px;
+    margin: 0.5vh;
     float:left;
     position: relative;
    text-align: center;
 }
+.iconBody:hover{
+    outline: 0.1vh solid rgb(169, 170, 170);
+    background-color: rgba(132, 134, 134, 0.7);
+}
 
 .icon-homescreen{
     
-    width: 100%;
+    width: 65%;
    
     
 }
@@ -56,6 +57,7 @@ background-size: cover;
     text-align: center;
     left: 0;
     right: 0;
+    color: white;
     
 }
 
