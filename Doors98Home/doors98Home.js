@@ -34,22 +34,4 @@ document.getElementById('Doors98START').addEventListener('click', ()=>{
 
 
 
-//drag and drop icons somewhere
 
-let el
-
-function allowDrop(ev) {
-    ev.preventDefault();
-    
-  }
-  
-  function drag(ev) {
-    
-    el = ev.target
-  }
-  
-  function drop(ev) {
-    ev.preventDefault();
-    
-    ev.target.appendChild(el);
-  }
