@@ -51,9 +51,16 @@ function allowDrop(ev) {
             for(let i = 0; i < boxes.length; i++){
 
             if(!boxes[i].innerHTML == ""){
-                if(boxes[i].innerHTML == ""){
-                  
+                //console.log(boxes[i])
+                if(boxes[i].firstElementChild == null){
+                
+                    boxes[i].removeChild(boxes[i].childNodes[0])
+                    boxes[i].removeChild(boxes[i].childNodes[0])
+
+                    console.log(boxes[i].childNodes[0])
+                    console.log(boxes[i].childNodes)
                 }
+                
                 
             } 
         }
