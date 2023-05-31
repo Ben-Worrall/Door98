@@ -25,28 +25,51 @@ top: 0;
 width: 100%;
 height: 94vh;
 background-color: #008080;
+overflow:hidden;
 
+
+
+}
+
+
+/*  grid to house icons*/
+.gridHomeScreen{
+    /*outline: 0.1vh solid rgb(169, 170, 170);*/
+    width: 6vw;
+    height: 12vh;
+    float: left;
+    margin-left: 0.5vw;
+    margin-top: 0.5vw;
+    
     
 }
+
+
+
+
+
+/* icons */
 .iconBody{
-    width: 5%;
-    height: 11%;
+    width: 100%;
+    height: 100%;
     text-align:center;
     display:block;
     background-color: transparent;
     border: 1px solid transparent;
-    margin: 0.5vh;
+    
     float:left;
     position: relative;
    text-align: center;
+   
 }
+
 .iconBody:hover{
     outline: 0.1vh solid rgb(169, 170, 170);
     background-color: rgba(132, 134, 134, 0.7);
 }
 
-.icon-homescreen{
-    
+.icon-homescreen-img{
+    pointer-events: none;
     width: 65%;
    
     
@@ -58,6 +81,7 @@ background-color: #008080;
     left: 0;
     right: 0;
     color: white;
+    pointer-events: none;
     
 }
 
