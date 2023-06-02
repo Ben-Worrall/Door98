@@ -1,3 +1,5 @@
+
+
 function OnloadFunc(){
     document.getElementById("html").style.cursor = "none"
     setTimeout(getToHome, 6500)
@@ -23,3 +25,10 @@ function LoadHome(){
     //for github
     else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/tree/26beab113a3978db74b33e7af6286038b43fed6a/Doors98Home'}
 }
+
+
+
+
+
+    
+    

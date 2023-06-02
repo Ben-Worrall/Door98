@@ -135,7 +135,10 @@ justify-content: center;
 
 
 }
-
+#hour-min-am-pm{
+    width:75%;
+    height: 75%;
+}
 
 
 
@@ -204,6 +207,7 @@ width: 100%;
 border-top: .2vh solid grey;
 background-color: rgb(190, 190, 190);
 position: absolute;
+
 }
 
 
@@ -236,4 +240,14 @@ position: absolute;
 .start-menu-bnt:hover{
     color: white;
     background-color: blue;
+}
+
+
+
+
+/* StartMenu second popups */
+#StartMenu-popup-second{
+    z-index: 100;
+    position: absolute;
+    
 }

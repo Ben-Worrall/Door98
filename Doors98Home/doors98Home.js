@@ -1,5 +1,5 @@
 //if user is in fullscreen mode then increase size of buttons and whatnot
-
+timeTaskBarUpdate()
 
 function fullscreen(){
     if (window.innerHeight === screen.height) {
@@ -25,7 +25,7 @@ document.getElementById('hour-min-am-pm').innerText = time.toLocaleString('en-US
 
 setInterval(timeTaskBarUpdate, 1)
 }
-timeTaskBarUpdate()
+
 
 
 document.getElementById('Doors98START').addEventListener('click', ()=>{

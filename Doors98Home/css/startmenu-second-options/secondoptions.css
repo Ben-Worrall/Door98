@@ -1,0 +1,22 @@
+.main{
+    background-color: rgb(187, 187, 187);
+    border-left: 0.5vh solid white;
+    border-top: 0.5vh solid white;
+    border-right: 0.5vh solid rgb(100, 100, 100);
+    border-bottom: 0.5vh solid rgb(100, 100, 100);
+    position: absolute;
+    display: block;
+    width: 15vw;
+    
+}
+
+.mainopts{
+    background-color: rgb(190, 190, 190);
+    display: block;
+    margin-bottom: 1vh;
+    color: black;
+}
+.mainopts:hover{
+    background-color: blue;
+    color: white;
+}

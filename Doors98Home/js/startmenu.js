@@ -11,44 +11,117 @@ var Help = document.getElementById('"StartMenu-Help')
 var Run = document.getElementById('StartMenu-Run')
 var LogOff = document.getElementById('StartMenu-LogOff')
 var ShutDown = document.getElementById('StartMenu-ShutDown')
+var secondPopup = document.getElementById('StartMenu-popup-second')
 
 
 
-
-function MenuClick(){
+document.getElementById('StartMenu').addEventListener('click', ()=>{
    
     if(MenuPopup.style.display == "none"){
         MenuPopup.style.display = ""
-    } else if(MenuPopup.style.display == ""){
+    }else {
+        
         MenuPopup.style.display = "none"
+        secondPopup.style.display = "none"
     }
-}
+    
+})
 
 //when user hovers over programs,settings,favorites,documents,find. then show more options
 Programs.onmouseover = function(){
-alert('hovered')
+    let Program = Programs.getBoundingClientRect();
+    secondPopup.style.display=""
+    fetch('html/startmenu-second-options/Programs.html')
+    .then(res=>res.text())
+    .then(data=>{
+        secondPopup.innerHTML = data
+    })
+    secondPopup.style.position = "absolute"
+    secondPopup.style.top = Program.top + "px"
+    secondPopup.style.marginLeft = "16.5vw"
+    
+
 };
 
 
 Favorites.onmouseover = function(){
+
+    let Favorite = Favorites.getBoundingClientRect();
+    secondPopup.style.display=""
+    fetch('html/startmenu-second-options/Favorites.html')
+    .then(res=>res.text())
+    .then(data=>{
+        secondPopup.innerHTML = data
+    })
+    secondPopup.style.position = "absolute"
+    secondPopup.style.top = Favorite.top + "px"
+    secondPopup.style.marginLeft = "16.5vw"
+    
 
 };
 
 
 Documents.onmouseover = function(){
 
+    let Document = Documents.getBoundingClientRect();
+    secondPopup.style.display=""
+    fetch('html/startmenu-second-options/Documents.html')
+    .then(res=>res.text())
+    .then(data=>{
+        secondPopup.innerHTML = data
+    })
+    secondPopup.style.position = "absolute"
+    secondPopup.style.top = Document.top + "px"
+    secondPopup.style.marginLeft = "16.5vw"
+    
+
 };
 
 
 Settings.onmouseover = function(){
+
+    let Setting = Settings.getBoundingClientRect();
+    secondPopup.style.display=""
+    fetch('html/startmenu-second-options/Settings.html')
+    .then(res=>res.text())
+    .then(data=>{
+        secondPopup.innerHTML = data
+    })
+    secondPopup.style.position = "absolute"
+    secondPopup.style.top = Setting.top + "px"
+    secondPopup.style.marginLeft = "16.5vw"
+    
 
 };
 
 
 Find.onmouseover = function(){
 
+
+    let Fin = Find.getBoundingClientRect();
+    secondPopup.style.display=""
+    fetch('html/startmenu-second-options/Find.html')
+    .then(res=>res.text())
+    .then(data=>{
+        secondPopup.innerHTML = data
+    })
+    secondPopup.style.position = "absolute"
+    secondPopup.style.top = Fin.top + "px"
+    secondPopup.style.marginLeft = "16.5vw"
+    
+
 };
 
+//if u click off of the startmenu then close startmenu
+
+document.getElementById('content').addEventListener("mouseup", function(event) {
+    
+    if (!MenuPopup.contains(event.target) && !Startmenu.contains(event.target)) {
+        MenuPopup.style.display = "none"
+        secondPopup.style.display = "none"
+    }
+    
+});
 
 
 
