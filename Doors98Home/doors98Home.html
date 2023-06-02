@@ -154,7 +154,7 @@
 
 
 
-                <div id="StartMenu-popup">
+                <div id="StartMenu-popup" style="display:none">
                     <div id="start-menu-doors98"> <a style="font-weight: bold;margin-top: 2%;">Doors</a> 98</div>
 
                     <!--menu options-->
@@ -171,12 +171,12 @@
                             <div class="start-menu-first-opt">Settings <a style="right:0;position: absolute;">►</a></div>
                             <div class="start-menu-first-opt">Find  </div>
                             <div class="start-menu-first-opt">Help  </div>
-                            <div class="start-menu-first-opt">Run  </div>
+                            <div class="start-menu-first-opt">Run...  </div>
 
                         </div>
 
                         <div id="start-menu-bottom">
-                            <button class="start-menu-bnt" style="height: 50%;">Log D# PC USER...</button>
+                            <button class="start-menu-bnt" style="height: 50%;">Log Off...</button>
                             <button class="start-menu-bnt" style="height: 50%;">Shut Down...</button>
 
                         </div>
@@ -216,7 +216,7 @@
 
             <!--taskbar -->
             <div id="TaskBar"> 
-            <button id="StartMenu"></button>
+            <button id="StartMenu" onclick="MenuClick()"></button>
             <div id="time">
                 <button>set</button>
                 <div id="hour-min-am-pm"></div>
@@ -230,5 +230,6 @@
 
         <script src="doors98Home.js"></script>
         <script src="icons.js"></script>
+        <script src="startmenu.js"></script>
     </body>
 </html>
