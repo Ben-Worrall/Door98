@@ -31,7 +31,7 @@ document.getElementById('StartMenu').addEventListener('click', ()=>{
 Programs.onmouseover = function(){
     let Program = Programs.getBoundingClientRect();
     secondPopup.style.display=""
-    fetch('html/startmenu-second-options/Programs.html')
+    fetch('startmenu/startmenu-second-options/html/Programs.html')
     .then(res=>res.text())
     .then(data=>{
         secondPopup.innerHTML = data
@@ -48,7 +48,7 @@ Favorites.onmouseover = function(){
 
     let Favorite = Favorites.getBoundingClientRect();
     secondPopup.style.display=""
-    fetch('html/startmenu-second-options/Favorites.html')
+    fetch('startmenu/startmenu-second-options/html/Favorites.html')
     .then(res=>res.text())
     .then(data=>{
         secondPopup.innerHTML = data
@@ -65,7 +65,7 @@ Documents.onmouseover = function(){
 
     let Document = Documents.getBoundingClientRect();
     secondPopup.style.display=""
-    fetch('html/startmenu-second-options/Documents.html')
+    fetch('startmenu/startmenu-second-options/html/Documents.html')
     .then(res=>res.text())
     .then(data=>{
         secondPopup.innerHTML = data
@@ -79,10 +79,9 @@ Documents.onmouseover = function(){
 
 
 Settings.onmouseover = function(){
-
     let Setting = Settings.getBoundingClientRect();
     secondPopup.style.display=""
-    fetch('html/startmenu-second-options/Settings.html')
+    fetch('startmenu/startmenu-second-options/html/Settings.html')
     .then(res=>res.text())
     .then(data=>{
         secondPopup.innerHTML = data
@@ -90,6 +89,7 @@ Settings.onmouseover = function(){
     secondPopup.style.position = "absolute"
     secondPopup.style.top = Setting.top + "px"
     secondPopup.style.marginLeft = "16.5vw"
+
     
 
 };
@@ -100,7 +100,7 @@ Find.onmouseover = function(){
 
     let Fin = Find.getBoundingClientRect();
     secondPopup.style.display=""
-    fetch('html/startmenu-second-options/Find.html')
+    fetch('startmenu/startmenu-second-options/html/Find.html')
     .then(res=>res.text())
     .then(data=>{
         secondPopup.innerHTML = data

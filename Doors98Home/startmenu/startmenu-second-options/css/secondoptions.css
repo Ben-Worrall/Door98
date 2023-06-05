@@ -1,3 +1,4 @@
+
 .main{
     background-color: rgb(187, 187, 187);
     border-left: 0.5vh solid white;
@@ -14,7 +15,7 @@
     background-color: rgb(190, 190, 190);
     display: block;
     margin-bottom: 1vh;
-    color: black;
+    color: rgb(2, 2, 2);
 }
 .mainopts:hover{
     background-color: blue;
