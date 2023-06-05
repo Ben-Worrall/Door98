@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(97, 96, 172);
+}
+
+#startmenu-shutdown-app{
+    border-left: .4vh solid white;
+    border-top: .4vh solid white;
+    border-right: .4vh solid black;
+    border-bottom: .4vh solid black;
+    background-color: rgb(187, 187, 187);
+    height: 30vh;
+    width: 20vw;
+    color: white;
+    position: absolute;
+}
+
+
+#startmenu-shutdown-top{
+    outline: 0.2vh solid rgb(255, 255, 255);
+    background-image: linear-gradient(to right, rgb(0, 26, 255) , rgb(149, 166, 241));
+    height:10%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    
+}
+
+
+#startmenu-shutdown-exit{
+    position: absolute;
+    right: 0;
+    width: 10%;
+    height: 90%;
+    
+    border-left: .2vh solid white;
+    border-top: .2vh solid white;
+    border-right: .2vh solid black;
+    border-bottom: .2vh solid black;
+}
