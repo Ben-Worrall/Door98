@@ -8,10 +8,11 @@ body{
     border-right: .4vh solid black;
     border-bottom: .4vh solid black;
     background-color: rgb(187, 187, 187);
-    height: 30vh;
-    width: 20vw;
+    height: 40vh;
+    width: 25vw;
     color: white;
     position: absolute;
+    
 }
 
 
@@ -30,11 +31,148 @@ body{
 #startmenu-shutdown-exit{
     position: absolute;
     right: 0;
-    width: 10%;
-    height: 90%;
+    width: 7%;
+    height: 80%;
     
-    border-left: .2vh solid white;
-    border-top: .2vh solid white;
-    border-right: .2vh solid black;
-    border-bottom: .2vh solid black;
+    border-left: .4vh solid white;
+    border-top: .4vh solid white;
+    border-right: .4vh solid black;
+    border-bottom: .4vh solid black;
+    background-color: rgb(187, 187, 187);
+    font-size: 90%;
 }
+#startmenu-shutdown-exit:hover{
+  
+  background-color: rgb(255, 0, 0);
+  color: white;
+  
+}
+
+
+#startmenu-shutdown-bottom{
+    position: relative;
+    margin-top: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:89%;
+    width: 100%;
+}
+
+
+
+
+
+#startmenu-shutdown-bottom-options{
+    position: absolute;
+    margin-bottom: 20%;
+   
+   right: 0;
+    width: 75%;
+    margin-top: 20%;
+    align-items: right;
+}
+
+
+
+
+
+
+
+
+
+/* The container */
+.startmenu-shutdown-bottom-container {
+    color: black;
+    display: block;
+    position: relative;
+    padding-left: 9%;
+    margin-top:  1.5%;
+    cursor: pointer;
+    font-size: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+  }
+  
+  /* Hide the browser's default radio button */
+  .startmenu-shutdown-bottom-container input {
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .startmenu-shutdown-bottom-checkmark {
+    top: 0;
+bottom: 0;
+margin: auto;
+position: absolute;
+left: 0;
+
+    height: 2vh;
+    width: 2vh;
+    background-color: #eee;
+    border-radius: 50%;
+    border-top: .2vh solid black;
+    border-left: .2vh solid black;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .startmenu-shutdown-bottom-container:hover input ~ .startmenu-shutdown-bottom-checkmark {
+    background-color: #ccc9c9;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .startmenu-shutdown-bottom-container input:checked ~ .startmenu-shutdown-bottom-checkmark {
+    background-color: #ffffff;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .startmenu-shutdown-bottom-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .startmenu-shutdown-bottom-container input:checked ~ .startmenu-shutdown-bottom-checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .startmenu-shutdown-bottom-container .startmenu-shutdown-bottom-checkmark:after {
+       top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 40%;
+      height: 40%;
+      border-radius: 50%;
+      background: rgb(0, 0, 0);
+  }
+
+
+
+
+#startmenu-shutdown-bottom-buttons-div{
+  display: flex;
+  justify-content: center;
+    position: relative;
+    margin-top: 13%;
+    
+}
+.startmenu-shutdown-bottom-buttons{
+ 
+  margin-right: 1%;
+  width: 32%;
+  border-left: .4vh solid white;
+    border-top: .4vh solid white;
+    border-right: .4vh solid black;
+    border-bottom: .4vh solid black;
+    background-color: rgb(187, 187, 187);
+    font-size: 90%;
+}
+
+
