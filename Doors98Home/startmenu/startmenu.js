@@ -13,7 +13,7 @@ var LogOff = document.getElementById('StartMenu-LogOff')
 var ShutDown = document.getElementById('StartMenu-ShutDown')
 var secondPopup = document.getElementById('StartMenu-popup-second')
 var firstApp = document.getElementById('StartMenu-popup-first-apps')
-
+var Body = document.getElementById('Body')
 
 document.getElementById('StartMenu').addEventListener('click', ()=>{
    
@@ -150,10 +150,11 @@ ShutDown.addEventListener('click', ()=>{
         firstApp.innerHTML = data
     })
     
-    firstApp.style.top = "50%"
-    firstApp.style.marginLeft = "18vw"
-    console.log( firstApp.getBoundingClientRect().bottom, shut.top)
-
+   
+    let script= document.createElement("script");
+script.src = "./startmenu/apps-first-opt/shutdown/startmenu-shutdown.js"
+Body.appendChild( script )
+MenuPopup.style.display = "none"
 
 
 })
