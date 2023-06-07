@@ -12,7 +12,7 @@ var Run = document.getElementById('StartMenu-Run')
 var LogOff = document.getElementById('StartMenu-LogOff')
 var ShutDown = document.getElementById('StartMenu-ShutDown')
 var secondPopup = document.getElementById('StartMenu-popup-second')
-
+var firstApp = document.getElementById('StartMenu-popup-first-apps')
 
 
 document.getElementById('StartMenu').addEventListener('click', ()=>{
@@ -44,6 +44,7 @@ Programs.onmouseover = function(){
 };
 
 
+
 Favorites.onmouseover = function(){
 
     let Favorite = Favorites.getBoundingClientRect();
@@ -59,6 +60,7 @@ Favorites.onmouseover = function(){
     
 
 };
+
 
 
 Documents.onmouseover = function(){
@@ -78,6 +80,7 @@ Documents.onmouseover = function(){
 };
 
 
+
 Settings.onmouseover = function(){
     let Setting = Settings.getBoundingClientRect();
     secondPopup.style.display=""
@@ -95,6 +98,7 @@ Settings.onmouseover = function(){
 };
 
 
+
 Find.onmouseover = function(){
 
 
@@ -108,21 +112,51 @@ Find.onmouseover = function(){
     secondPopup.style.position = "absolute"
     secondPopup.style.top = Fin.top + "px"
     secondPopup.style.marginLeft = "16.5vw"
-    
-
+    console.log(secondPopup.style.top)
 };
+
+
+
+
 
 //if u click off of the startmenu then close startmenu
 
 document.getElementById('content').addEventListener("mouseup", function(event) {
     
-    if (!MenuPopup.contains(event.target) && !Startmenu.contains(event.target)) {
+    if (!MenuPopup.contains(event.target) && !Startmenu.contains(event.target) && !firstApp.contains(event.target)) {
         MenuPopup.style.display = "none"
         secondPopup.style.display = "none"
     }
     
 });
 
+
+//when user clicks on the first menu options
+
+//update windows
+//help
+//run
+//logoff
+
+
+//shutdown
+ShutDown.addEventListener('click', ()=>{
+    let shut = document.getElementById('start-menu-bottom').getBoundingClientRect();
+
+    firstApp.style.display=""
+    fetch('startmenu/apps-first-opt/shutdown/startmenu-shutdown.html')
+    .then(res=>res.text())
+    .then(data=>{
+        firstApp.innerHTML = data
+    })
+    
+    firstApp.style.top = "50%"
+    firstApp.style.marginLeft = "18vw"
+    console.log( firstApp.getBoundingClientRect().bottom, shut.top)
+
+
+
+})
 
 
 

@@ -251,3 +251,12 @@ position: absolute;
     position: absolute;
     
 }
+/* StartMenu  popups for first apps */
+#StartMenu-popup-first-apps{
+    z-index: 100;
+    position: absolute;
+    
+    
+
+    
+}

@@ -1,6 +1,4 @@
-body{
-    background-color: rgb(97, 96, 172);
-}
+
 
 #startmenu-shutdown-app{
     border-left: .4vh solid white;
@@ -17,7 +15,7 @@ body{
 
 
 #startmenu-shutdown-top{
-    outline: 0.2vh solid rgb(255, 255, 255);
+    border-bottom: 0.2vh solid rgb(255, 255, 255);
     background-image: linear-gradient(to right, rgb(0, 26, 255) , rgb(149, 166, 241));
     height:10%;
     width: 100%;
@@ -33,13 +31,16 @@ body{
     right: 0;
     width: 7%;
     height: 80%;
-    
+    margin-right: 1%;
     border-left: .4vh solid white;
     border-top: .4vh solid white;
     border-right: .4vh solid black;
     border-bottom: .4vh solid black;
     background-color: rgb(187, 187, 187);
     font-size: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #startmenu-shutdown-exit:hover{
   
