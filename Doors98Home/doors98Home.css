@@ -114,19 +114,48 @@ background: url('/Doors98HomeScreenBackground.png') no-repeat center center fixe
     margin-left: 0.3vw;
     margin-right: 0.3vw;
     width: 99.4vw;
-    height: 6vh;
+    height: 7.5vh;
+    display: inline-block;
+    
+    
 }
+
+#iconDropTaskBar{
+    outline: 0.1vh solid blue;
+    
+    width: 82%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    
+}
+.dropintaskbar{
+    width: 9%;
+    float: left;
+    height: 100%;
+    margin-left: 1%;
+}
+
+
+
+
+
+
+
 
 
 #StartMenu{
 background: url("/Doors98Start.png");
 background-size:cover;
 background-position: center;
-width: 7%;
+width: 8%;
 height: 99%;
+float: left;
 }
 
 #time{
+
 float: right;
 width: 8%;
 height: 99%;
@@ -267,10 +296,7 @@ position: absolute;
     align-items: center;
     
     
-    
-    
-    
-    
+
     
     
 }
