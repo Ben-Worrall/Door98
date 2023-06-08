@@ -115,7 +115,15 @@ Find.onmouseover = function(){
     console.log(secondPopup.style.top)
 };
 
-
+//hover over anything else then stop displaying the hovered over stuff
+Body.onmouseover = function(e){
+if(e.target != Find && e.target != Documents && e.target != Favorites && e.target != Programs && e.target != Settings){
+    if(e.target.id != "start-menu-mid" && e.target.id != "StartMenu-popup" && e.target.classList != "main" && e.target.classList != "mainopts" && e.target.classList != "triangleAtag"){
+        secondPopup.style.display="none"
+       
+    }
+} 
+}
 
 
 
