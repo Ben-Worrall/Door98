@@ -35,3 +35,8 @@ document.getElementById('Doors98START').addEventListener('click', ()=>{
 
 
 
+
+//rightclick on taskbar
+
+
+ 

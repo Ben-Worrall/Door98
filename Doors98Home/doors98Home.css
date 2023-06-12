@@ -114,15 +114,14 @@ background: url('/Doors98HomeScreenBackground.png') no-repeat center center fixe
     margin-left: 0.3vw;
     margin-right: 0.3vw;
     width: 99.4vw;
-    height: 7.5vh;
+    height: 6.5vh;
     display: inline-block;
     
     
 }
 
 #iconDropTaskBar{
-    outline: 0.1vh solid blue;
-    
+
     width: 82%;
     height: 100%;
     float: left;
@@ -131,11 +130,81 @@ background: url('/Doors98HomeScreenBackground.png') no-repeat center center fixe
     
 }
 .dropintaskbar{
-    width: 9%;
+    width: 6%;
     float: left;
     height: 100%;
-    margin-left: 1%;
+    margin-left: 0.3%;
+    outline: 1px solid blue;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .draggable.dragging {
+    opacity: .5;
+  }
+
+
+
+
+
+
+
+  #contextMenu {
+    position: fixed;
+    text-align: center;
+    background: lightgray;
+    border: 1px solid black;
+    z-index: 1000;
+    display: none;
+}
+#contextMenu.visible{
+    display: block;
+}
+.context-menu ul {
+    padding: 0px;
+    margin: 0px;
+    min-width: 150px;
+    list-style: none;
+}
+
+.context-menu ul li {
+    padding-bottom: 7px;
+    padding-top: 7px;
+    border: 1px solid black;
+}
+
+.context-menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.context-menu ul li:hover {
+    background: darkgray;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -149,7 +218,7 @@ background: url('/Doors98HomeScreenBackground.png') no-repeat center center fixe
 background: url("/Doors98Start.png");
 background-size:cover;
 background-position: center;
-width: 8%;
+width: 7%;
 height: 99%;
 float: left;
 }

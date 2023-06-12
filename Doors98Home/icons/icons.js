@@ -106,3 +106,44 @@ document.onclick = function (event) {
 
 
 }
+
+
+var contextMenu = document.getElementById('contextMenu')
+
+
+//right click on an icon
+for(let i = 0; i < icons.length; i++){
+    icons[i].addEventListener('contextmenu', (event) => {
+
+        event.preventDefault();
+        
+        console.log('mouse right-click is prevented');
+
+        
+        const { clientX: mouseX, clientY: mouseY } = event;
+
+  contextMenu.style.top = mouseY + "px";
+  contextMenu.style.left = mouseX + "px";
+
+
+  contextMenu.classList.remove("visible");
+
+  setTimeout(() => {
+    contextMenu.classList.add("visible");
+  });
+    });
+
+    icons[i].addEventListener("click", (e) => {
+        if (e.target.offsetParent != contextMenu) {
+          contextMenu.classList.remove("visible");
+        }
+    })
+    document.addEventListener("click", (e) => {
+        if (e.target.offsetParent != contextMenu) {
+          contextMenu.classList.remove("visible");
+        }
+    })
+
+}
+
+

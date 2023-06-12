@@ -1,71 +1,54 @@
-var icons = document.getElementsByClassName('iconBody')
-var TaskBoxes =  document.querySelectorAll('.dropintaskbar')
+// DOM utility functions:
 
-var div = document.createElement('div')
+const ELS = (sel, par) => (par || document).querySelectorAll(sel);
 
 
-//drag and drop icons somewhere
+// TASK:
 
-var el
+const ELS_child = ELS(".dropintaskbar");
 
-function allowDropTask(ev) {
-    ev.preventDefault();
-    
-  }
+let EL_drag; // Used to remember the dragged element
+
+const addEvents = (EL_ev) => {
+  EL_ev.setAttribute("draggable", "true");
+  EL_ev.addEventListener("dragstart", onstart);
+  EL_ev.addEventListener("dragover", (ev) => ev.preventDefault());
+  EL_ev.addEventListener("drop", ondrop);
+};
+
+const onstart = (ev) => EL_drag = ev.currentTarget;
+
+const ondrop = (ev) => {
+  if (!EL_drag) return;
+
+  ev.preventDefault();
   
-  function dragTask(ev) {
-    
-    el = ev.target
-    for(let i = 0; i < icons.length; i++){
-        if ( ev.target !== icons[i]) {
-            icons[i].style.backgroundColor = ""
-        icons[i].style.outline = ""
-        } 
-    }
-    
-  }
+  const EL_targ = ev.currentTarget;
+  const EL_targClone = EL_targ.cloneNode(true);
+  const EL_dragClone = EL_drag.cloneNode(true);
   
-  function dropTask(ev) {
-    ev.preventDefault();
-    
-    
-    //appen element to very left of a fee one
-     //if box isnt occupied
+  EL_targ.replaceWith(EL_dragClone);
+  EL_drag.replaceWith(EL_targClone);
+  
+  addEvents(EL_targClone); // Reassign events to cloned element
+  addEvents(EL_dragClone); // Reassign events to cloned element
+  
+  EL_drag = undefined;
+};
 
-        //append element to the very left that doesnt have a icon in already
-    for(let j = 0; j<TaskBoxes.length;j++){
-        if(TaskBoxes[j].innerHTML == ""){
-            ev.target.appendChild(el);
-    }
-    
-    
-
-    //clear thr TaskBoxes that dont have icons in them
-    
-        
-
-            for(let i = 0; i < TaskBoxes.length; i++){
-
-            if(!TaskBoxes[i].innerHTML == ""){
-                //console.log(TaskBoxes[i])
-                if(TaskBoxes[i].firstElementChild == null){
-                
-                    TaskBoxes[i].removeChild(TaskBoxes[i].childNodes[0])
-                    TaskBoxes[i].removeChild(TaskBoxes[i].childNodes[0])
-
-                    console.log(TaskBoxes[i].childNodes[0])
-                    console.log(TaskBoxes[i].childNodes)
-                }
-                
-                
-            } 
-            }
-            
-            
-        
+ELS_child.forEach((EL_child) => addEvents(EL_child));
 
 
 
-    }
 
-    }
+
+
+
+
+
+
+
+
+
+
+
