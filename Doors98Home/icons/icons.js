@@ -22,6 +22,8 @@ function allowDrop(ev) {
         icons[i].style.outline = ""
         } 
     }
+
+    contextMenu.classList.remove("visible");
     
   }
   
@@ -108,7 +110,15 @@ document.onclick = function (event) {
 }
 
 
-var contextMenu = document.getElementById('contextMenu')
+var contextMenu = document.getElementById('contextMenuIconHome')
+
+var contextMenuPOS = contextMenu.getBoundingClientRect()
+
+
+
+
+
+
 
 
 //right click on an icon
@@ -122,8 +132,16 @@ for(let i = 0; i < icons.length; i++){
         
         const { clientX: mouseX, clientY: mouseY } = event;
 
-  contextMenu.style.top = mouseY + "px";
-  contextMenu.style.left = mouseX + "px";
+        
+        
+        
+        
+        contextMenu.style.top = mouseY + "px"
+        contextMenu.style.left = mouseX + "px"
+
+       
+        
+        
 
 
   contextMenu.classList.remove("visible");
