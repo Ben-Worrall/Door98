@@ -130,16 +130,17 @@ for(let i = 0; i < icons.length; i++){
         console.log('mouse right-click is prevented');
 
         
-        const { clientX: mouseX, clientY: mouseY } = event;
+        let x = event.pageX, y = event.pageY,
+        winWidth = window.innerWidth,
+        winHeight = window.innerHeight,
+        cmWidth = contextMenu.offsetWidth,
+        cmHeight = contextMenu.offsetHeight;
 
+        x = x > winWidth - cmWidth ? winWidth - cmWidth - 5 : x;
+        y = y > winHeight - cmHeight ? winHeight - cmHeight - 5 : y;
         
-        
-        
-        
-        contextMenu.style.top = mouseY + "px"
-        contextMenu.style.left = mouseX + "px"
-
-       
+        contextMenu.style.left = `${x}px`;
+        contextMenu.style.top = `${y}px`;
         
         
 
