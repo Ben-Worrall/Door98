@@ -114,6 +114,9 @@ document.onclick = function (event) {
 
 
 
+//if user rightclicks on an icon
+
+
 //Events for desktop and touch
 let events = ["contextmenu"];
 //initial declaration
@@ -124,48 +127,74 @@ var lastTap = 0;
 let contextMenu = document.getElementById("contextMenuIconHome");
 //same function for both events
 events.forEach((eventType) => {
-  document.addEventListener(
-    eventType,
-    (e) => {
-      e.preventDefault();
-      //x and y position of mouse or touch
-      let mouseX = e.clientX || e.touches[0].clientX;
-      let mouseY = e.clientY || e.touches[0].clientY;
-      //height and width of menu
-      let menuHeight = contextMenu.getBoundingClientRect().height;
-      let menuWidth = contextMenu.getBoundingClientRect().width;
-      //width and height of screen
-      let width = window.innerWidth;
-      let height = window.innerHeight;
-      //If user clicks/touches near right corner
-      if (width - mouseX <= 200) {
-        contextMenu.style.borderRadius = "5px 0 5px 5px";
-        contextMenu.style.left = width - menuWidth + "px";
-        contextMenu.style.top = mouseY + "px";
-        //right bottom
-        if (height - mouseY <= 200) {
-          contextMenu.style.top = mouseY - menuHeight + "px";
-          contextMenu.style.borderRadius = "5px 5px 0 5px";
-        }
-      }
-      //left
-      else {
-        contextMenu.style.borderRadius = "0 5px 5px 5px";
-        contextMenu.style.left = mouseX + "px";
-        contextMenu.style.top = mouseY + "px";
-        //left bottom
-        if (height - mouseY <= 200) {
-          contextMenu.style.top = mouseY - menuHeight + "px";
-          contextMenu.style.borderRadius = "5px 5px 5px 0";
-        }
-      }
-      //display the menu
-      contextMenu.style.visibility = "visible";
-    },
-    { passive: false }
-  );
+
+    for(let i = 0; i < icons.length; i++){
+        icons[i].addEventListener(
+            eventType,
+            (e) => {
+                icons[i].style.backgroundColor = "rgba(132, 134, 134, 0.7)"
+                icons[i].style.outline = "0.1vh solid rgb(169, 170, 170)"
+              e.preventDefault();
+              //x and y position of mouse or touch
+              let mouseX = e.clientX || e.touches[0].clientX;
+              let mouseY = e.clientY || e.touches[0].clientY;
+              //height and width of menu
+              let menuHeight = contextMenu.getBoundingClientRect().height;
+              let menuWidth = contextMenu.getBoundingClientRect().width;
+              //width and height of screen
+              let width = window.innerWidth;
+              let height = window.innerHeight;
+              //If user clicks/touches near right corner
+              if (width - mouseX <= 200) {
+                contextMenu.style.borderRadius = "5px 0 5px 5px";
+                contextMenu.style.left = width - menuWidth + "px";
+                contextMenu.style.top = mouseY + "px";
+                //right bottom
+                if (height - mouseY <= 200) {
+                  contextMenu.style.top = mouseY - menuHeight + "px";
+                  contextMenu.style.borderRadius = "5px 5px 0 5px";
+                }
+              }
+              //left
+              else {
+                contextMenu.style.borderRadius = "0 5px 5px 5px";
+                contextMenu.style.left = mouseX + "px";
+                contextMenu.style.top = mouseY + "px";
+                //left bottom
+                if (height - mouseY <= 200) {
+                  contextMenu.style.top = mouseY - menuHeight + "px";
+                  contextMenu.style.borderRadius = "5px 5px 5px 0";
+                }
+              }
+              //display the menu
+              contextMenu.style.visibility = "visible";
+            },
+            { passive: false }
+          );
+    }
+  
 });
 
 
+
+//if user clicks off of an icon then close rightclick menu
+
+document.onclick = function (event) {
+
+   for(let i = 0; i < icons.length; i++){
+    if ( event.target.parentNode.parentNode != contextMenu && event.target == icons[i]) {
+        contextMenu.style.visibility = "hidden"
+    } else {
+        icons[i].style.backgroundColor = ""
+        icons[i].style.outline = ""
+        contextMenu.style.visibility = "hidden"
+    }
+   }
+        
+
+
+
+}
+    
 
 
