@@ -110,59 +110,62 @@ document.onclick = function (event) {
 }
 
 
-var contextMenu = document.getElementById('contextMenuIconHome')
-
-var contextMenuPOS = contextMenu.getBoundingClientRect()
 
 
 
 
-
-
-
-
-//right click on an icon
-for(let i = 0; i < icons.length; i++){
-    icons[i].addEventListener('contextmenu', (event) => {
-
-        event.preventDefault();
-        
-        console.log('mouse right-click is prevented');
-
-        
-        let x = event.pageX, y = event.pageY,
-        winWidth = window.innerWidth,
-        winHeight = window.innerHeight,
-        cmWidth = contextMenu.offsetWidth,
-        cmHeight = contextMenu.offsetHeight;
-
-        x = x > winWidth - cmWidth ? winWidth - cmWidth - 5 : x;
-        y = y > winHeight - cmHeight ? winHeight - cmHeight - 5 : y;
-        
-        contextMenu.style.left = `${x}px`;
-        contextMenu.style.top = `${y}px`;
-        
-        
-
-
-  contextMenu.classList.remove("visible");
-
-  setTimeout(() => {
-    contextMenu.classList.add("visible");
-  });
-    });
-
-    icons[i].addEventListener("click", (e) => {
-        if (e.target.offsetParent != contextMenu) {
-          contextMenu.classList.remove("visible");
+//Events for desktop and touch
+let events = ["contextmenu"];
+//initial declaration
+var timeout;
+//for double tap
+var lastTap = 0;
+//refer menu div
+let contextMenu = document.getElementById("contextMenuIconHome");
+//same function for both events
+events.forEach((eventType) => {
+  document.addEventListener(
+    eventType,
+    (e) => {
+      e.preventDefault();
+      //x and y position of mouse or touch
+      let mouseX = e.clientX || e.touches[0].clientX;
+      let mouseY = e.clientY || e.touches[0].clientY;
+      //height and width of menu
+      let menuHeight = contextMenu.getBoundingClientRect().height;
+      let menuWidth = contextMenu.getBoundingClientRect().width;
+      //width and height of screen
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      //If user clicks/touches near right corner
+      if (width - mouseX <= 200) {
+        contextMenu.style.borderRadius = "5px 0 5px 5px";
+        contextMenu.style.left = width - menuWidth + "px";
+        contextMenu.style.top = mouseY + "px";
+        //right bottom
+        if (height - mouseY <= 200) {
+          contextMenu.style.top = mouseY - menuHeight + "px";
+          contextMenu.style.borderRadius = "5px 5px 0 5px";
         }
-    })
-    document.addEventListener("click", (e) => {
-        if (e.target.offsetParent != contextMenu) {
-          contextMenu.classList.remove("visible");
+      }
+      //left
+      else {
+        contextMenu.style.borderRadius = "0 5px 5px 5px";
+        contextMenu.style.left = mouseX + "px";
+        contextMenu.style.top = mouseY + "px";
+        //left bottom
+        if (height - mouseY <= 200) {
+          contextMenu.style.top = mouseY - menuHeight + "px";
+          contextMenu.style.borderRadius = "5px 5px 5px 0";
         }
-    })
+      }
+      //display the menu
+      contextMenu.style.visibility = "visible";
+    },
+    { passive: false }
+  );
+});
 
-}
+
 
 
