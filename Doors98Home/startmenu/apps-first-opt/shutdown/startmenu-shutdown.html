@@ -9,7 +9,7 @@
 <div id="startmenu-shutdown-top">
    Shut Down Doors  
 
-    <button id="startmenu-shutdown-exit" >X</button>
+    <button id="startmenu-shutdown-exit" onclick="exit()">X</button>
 
 </div>
 <div id="startmenu-shutdown-bottom">
@@ -35,10 +35,7 @@
                 <input type="radio" name="radio">
                 <span class="startmenu-shutdown-bottom-checkmark"></span>
               </label>
-              <label class="startmenu-shutdown-bottom-container">Log off
-                <input type="radio" name="radio">
-                <span class="startmenu-shutdown-bottom-checkmark"></span>
-              </label>
+             
             
 
 
@@ -50,9 +47,9 @@
 
 
         <div id="startmenu-shutdown-bottom-buttons-div">
-            <button class="startmenu-shutdown-bottom-buttons">OK</button>
-            <button class="startmenu-shutdown-bottom-buttons">Cancel</button>
-            <button class="startmenu-shutdown-bottom-buttons">Help</button>
+            <button class="startmenu-shutdown-bottom-buttons" id="startmenu-shutdown-bottom-button-ok" onclick="ok()">OK</button>
+            <button class="startmenu-shutdown-bottom-buttons" id="startmenu-shutdown-bottom-button-cancel" onclick="cancel()">Cancel</button>
+            <button class="startmenu-shutdown-bottom-buttons" id="startmenu-shutdown-bottom-button-help" onclick="help()">Help</button>
         </div>
     </div>
 

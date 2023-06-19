@@ -164,6 +164,16 @@ script.src = "./startmenu/apps-first-opt/shutdown/startmenu-shutdown.js"
 Body.appendChild( script )
 MenuPopup.style.display = "none"
 
+//blur everything else 
+let allEL = document.getElementsByTagName("*");
+
+for (var i=0; i < allEL.length; i++) {
+     if(allEL[i] == Startmenu || allEL[i] == MenuPopup || allEL[i] == document.getElementById('gridHome') || allEL[i] == document.getElementById('TaskBar') || allEL[i] == document.getElementById('ContentBody')){
+        allEL[i].classList.add("blur") 
+        
+     } 
+}
+
 
 })
 
