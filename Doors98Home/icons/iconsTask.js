@@ -22,7 +22,7 @@ const ondrop = (ev) => {
   if (!EL_drag) return;
 
   ev.preventDefault();
-  
+  console.log(ev.currentTarget)
   const EL_targ = ev.currentTarget;
   const EL_targClone = EL_targ.cloneNode(true);
   const EL_dragClone = EL_drag.cloneNode(true);
@@ -34,11 +34,7 @@ const ondrop = (ev) => {
   addEvents(EL_dragClone); // Reassign events to cloned element
   
   EL_drag = undefined;
-  for(let i =0; i < document.querySelectorAll('.dropintaskbar').length; i++){
-    if(document.querySelectorAll('.dropintaskbar')[i].innerHTML == ""){
-      console.log(document.querySelectorAll('.dropintaskbar')[i])
-    }
-  }
+  
 };
 
 ELS_child.forEach((EL_child) => addEvents(EL_child));

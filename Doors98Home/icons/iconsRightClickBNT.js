@@ -10,7 +10,6 @@ var homeICONS = document.querySelectorAll('.iconBody')
 
 //new
 
-//print
 
 //quick view
 
@@ -28,12 +27,12 @@ var homeICONS = document.querySelectorAll('.iconBody')
 
 
 //pin to taskbar
-document.getElementById('ContextMenuIconHome-pintotaskbar').addEventListener('click', function (){
+document.getElementById('ContextMenuIconHome-pintotaskbar').addEventListener('click', function (e){
     //console.log('clicked')
     for(let i = 0; i < taskbariconELES.length; i++){
         
-        if(document.querySelectorAll('.dropintaskbar')[i].innerHTML == ""){
-            
+        if(taskbariconELES[i].innerHTML == ""){
+            console.log(taskbariconELES[i])
             for(let k = 0; k < homeICONS.length; k++){
                 if(homeICONS[k].style.backgroundColor == "rgba(132, 134, 134, 0.7)"){
                     
