@@ -22,7 +22,7 @@
                 <div class="gridHomeScreen" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                     <div class="iconBody" draggable="true" ondragstart="drag(event)">
-                        <img draggable="false" class="icon-homescreen-img" src="/icons/icon-bin.png" >
+                        <img draggable="false" class="icon-homescreen-img" src="/icons/icon-bin.png" alt="bin">
                         <div draggable="false" class="icon-text" >Bin111</div>
                     </div>
 
@@ -218,12 +218,12 @@
 
            <!--drop icons into taskbar -->
             <div id="iconDropTaskBar" class="" oncontextmenu="javascript:rightclicktaskbar();return false;">
-                <div class="dropintaskbar" draggable="true" ondrop="dropTask(event)" ></div>
-                <div class="dropintaskbar" draggable="true" ondrop="dropTask(event)" ></div>
-                <div class="dropintaskbar" draggable="true" ondrop="dropTask(event)" ></div>
-                <div class="dropintaskbar" draggable="true" ondrop="dropTask(event)" ></div>
-                <div class="dropintaskbar" draggable="true" ondrop="dropTask(event)" ></div>
-                <div class="dropintaskbar" draggable="true" ondrop="dropTask(event)" ></div>
+                <div class="dropintaskbar" draggable="true"  ></div>
+                <div class="dropintaskbar" draggable="true"  ></div>
+                <div class="dropintaskbar" draggable="true"  ></div>
+                <div class="dropintaskbar" draggable="true"  ></div>
+                <div class="dropintaskbar" draggable="true"  ></div>
+                <div class="dropintaskbar" draggable="true"  ></div>
                 
                 
             </div>
@@ -233,40 +233,7 @@
 
 
 
-           <!--dright click on taskbar then show options-->
-           <div id="contextMenuIconHome" class="context-menu-IconHome" 
-            >
-        <ul>
-        <li><a></a>Open</li>
-        <li><a></a>New</li>
-        <li><a></a>Print</li>
-        <li><a></a>Quick View</li>
-        
-        </ul>
-        <ul>
-            <li><a></a>Add to Zip</li>
-            <li><a></a>Scan for Viruses...</li>
-            <li><a></a>Zip and E-Mail</li>
-            
-               
-        </ul>
-        <ul>
-            <li><a></a>Send To<a class="triangleAtag" style="right:0;position: absolute;">►</a></li>
-            
-        </ul>
-        <ul>
-            <li><a></a>Cut</li>
-            <li><a></a>Copy</li>
-                       
-        </ul>
-        <ul>
-            <li><a></a>Pin to Task Bar</li>
-            <li><a></a>Create Shortcut</li>
-            <li><a></a>Delete</li>
-            <li><a></a>Rename</li>
-            <li><a></a>Properties</li>
-               
-        </ul>
+           
 </div>
 
 
@@ -281,6 +248,48 @@
 
             </div>
         </div>
+
+
+
+
+<!--right click on icon then show options-->
+<div id="contextMenuIconHome" class="context-menu-IconHome" 
+>
+<ul>
+<li id="ContextMenuIconHome-open"><a></a>Open</li>
+<li id="ContextMenuIconHome-new"><a></a>New</li>
+<li id="ContextMenuIconHome-print"><a></a>Print</li>
+<li id="ContextMenuIconHome-quickview"><a></a>Quick View</li>
+
+</ul>
+<ul>
+<li id="ContextMenuIconHome-addtozip"><a></a>Add to Zip</li>
+<li id="ContextMenuIconHome-scanforviruses"><a></a>Scan for Viruses...</li>
+<li id="ContextMenuIconHome-zipandemail"><a></a>Zip and E-Mail</li>
+
+   
+</ul >
+<ul>
+<li id="ContextMenuIconHome-sendto"><a></a>Send To<a class="triangleAtag" style="right:0;position: absolute;">►</a></li>
+
+</ul>
+<ul>
+<li id="ContextMenuIconHome-cut"><a></a>Cut</li>
+<li id="ContextMenuIconHome-copy"><a></a>Copy</li>
+           
+</ul>
+<ul>
+<li id="ContextMenuIconHome-pintotaskbar"><a></a>Pin to Task Bar</li>
+<li id="ContextMenuIconHome-delete"><a></a>Delete</li>
+<li id="ContextMenuIconHome-rename"><a></a>Rename</li>
+<li id="ContextMenuIconHome-properties"><a></a>Properties</li>
+   
+</ul>
+
+
+
+
+
 
 
 

@@ -1,5 +1,6 @@
 var icons = document.getElementsByClassName('iconBody')
 var boxes =  document.querySelectorAll('.gridHomeScreen')
+var boxesTASK =  document.querySelectorAll('.dropintaskbar')
 
 var div = document.createElement('div')
 
@@ -66,6 +67,7 @@ function allowDrop(ev) {
                 
             } 
         }
+        
             
             
         
@@ -75,39 +77,13 @@ function allowDrop(ev) {
     }
 
     }
-  
+
+    
+    
 
 
 
 
-
-//if u click once on an icon
-for(let i = 0; i < icons.length; i++){
-    icons[i].addEventListener('click', ()=>{
-        icons[i].style.backgroundColor = "rgba(132, 134, 134, 0.7)"
-        icons[i].style.outline = "0.1vh solid rgb(169, 170, 170)"
-    })
-}
-
-//if u click twice on an icon
-
-
-
-
-
-//if u click off an icon
-document.onclick = function (event) {
-
-    for(let i = 0; i < icons.length; i++){
-        if ( event.target !== icons[i]) {
-            icons[i].style.backgroundColor = ""
-        icons[i].style.outline = ""
-        } 
-    }
-
-
-
-}
 
 
 
@@ -177,19 +153,50 @@ events.forEach((eventType) => {
 
 
 
-//if user clicks off of an icon then close rightclick menu
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//if u click once on an icon
+for(let i = 0; i < icons.length; i++){
+    icons[i].addEventListener('click', ()=>{
+        icons[i].style.backgroundColor = "rgba(132, 134, 134, 0.7)"
+        icons[i].style.outline = "0.1vh solid rgb(169, 170, 170)"
+    })
+}
+
+
+
+
+//if user clicks off of an icon then close rightclick menu and or hide the background again
 
 document.onclick = function (event) {
 
    for(let i = 0; i < icons.length; i++){
-    if ( event.target.parentNode.parentNode != contextMenu && event.target == icons[i]) {
-        contextMenu.style.visibility = "hidden"
-    } else {
+
+    if(event.target !== icons[i] ){
+       
         icons[i].style.backgroundColor = ""
         icons[i].style.outline = ""
         contextMenu.style.visibility = "hidden"
-    }
-   }
+        
+
+    } 
+     
+    
+    
+    
+}
         
 
 
