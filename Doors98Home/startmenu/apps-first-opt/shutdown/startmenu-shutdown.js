@@ -33,6 +33,7 @@ function cancel(){
     for (var i=0; i < allEL.length; i++) {
          
         allEL[i].classList.remove("blur") 
+        
             
     } 
 }
