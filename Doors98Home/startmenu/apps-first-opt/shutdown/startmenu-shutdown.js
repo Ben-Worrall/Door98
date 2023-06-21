@@ -109,8 +109,26 @@ let curSel =  document.querySelector('.startmenu-shutdown-bottom-container input
 
 
     }else if(curSelARR[0] === "Restart "){  //restart
-
-        console.log( "restart ")
+      
+        //remove the blur
+        for (var i=0; i < allEL.length; i++) {
+            allEL[i].classList.remove("blur") 
+        } 
+        //change location to the restart page 
+        function LoadRestart(){
+            //for live server
+            if (location.hostname == "localhost" || location.hostname === "127.0.0.1"){
+                window.location = '/doors98Restart/doors98restart.html'
+            }
+        
+            //for file
+            else if(window.location.protocol == "file:"){
+            window.location = '/doors98Restart/doors98restart.html'
+            }
+            //for github
+            else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/tree/26beab113a3978db74b33e7af6286038b43fed6a/Doors98Home'}
+        }
+        setTimeout(LoadRestart, 2000)
 
 
 
