@@ -265,7 +265,7 @@ function DoorsStartup(){
     window.location = 'doors98Startup/doors98Startup.html'
     }
     //for github
-    else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/doors98Startup/doors98Startup.html'}
+    else if(document.location.protocol == "https:"){window.location = 'doors98Startup/doors98Startup.html'}
     
 }
 
