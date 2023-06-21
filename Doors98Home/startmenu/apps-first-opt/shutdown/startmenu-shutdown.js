@@ -98,7 +98,7 @@ let curSel =  document.querySelector('.startmenu-shutdown-bottom-container input
             window.location = '/doors98Shutdown/doors98shutdown.html'
             }
             //for github
-            else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/blob/2c6fe006593976741d6a5dd983ef02da9738a820/doors98Shutdown/doors98shutdown.html'}
+            else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/doors98Shutdown/doors98shutdown.html'}
         }
         LoadShutdown()
 
@@ -126,7 +126,7 @@ let curSel =  document.querySelector('.startmenu-shutdown-bottom-container input
             window.location = '/doors98Restart/doors98restart.html'
             }
             //for github
-            else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/blob/2c6fe006593976741d6a5dd983ef02da9738a820/doors98Restart/doors98restart.html'}
+            else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/doors98Restart/doors98restart.html'}
         }
         setTimeout(LoadRestart, 2000)
 

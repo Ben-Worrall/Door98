@@ -45,5 +45,5 @@ function toStartup(){
     window.location = '/doors98Startup/doors98Startup.html'
     }
     //for github
-    else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/blob/2c6fe006593976741d6a5dd983ef02da9738a820/doors98Startup/doors98Startup.html'}
+    else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/doors98Startup/doors98Startup.html'}
 }
