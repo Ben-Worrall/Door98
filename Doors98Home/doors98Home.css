@@ -241,7 +241,7 @@ background: url('/Doors98HomeScreenBackground.png') no-repeat center center fixe
 
 
 #StartMenu{
-background: url("/Doors98Start.png");
+background: url("Doors98Start.png");
 background-size:cover;
 background-position: center;
 width: 7%;
