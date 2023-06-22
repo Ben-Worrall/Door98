@@ -23,7 +23,7 @@ function LoadHome(){
     window.location = '/doors98Home/doors98Home.html'
     }
     //for github
-    else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/doors98Home/doors98Home.html'}
+    else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/Doors98Home/doors98Home.html'}
 }
 
 
