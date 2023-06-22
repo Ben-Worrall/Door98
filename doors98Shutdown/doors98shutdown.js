@@ -34,6 +34,6 @@ function getTostartbutton(){
     window.location = '/index.html'
     }
     //for github
-    else if(document.location.protocol == "https:"){window.location = 'https://github.com/Ben-Worrall/Doors98/blob/2c6fe006593976741d6a5dd983ef02da9738a820/index.html'}
+    else if(document.location.protocol == "https:"){window.location = 'https://Ben-Worrall/github.ioDoors98/index.html'}
 }
 
