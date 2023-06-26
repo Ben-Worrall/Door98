@@ -1,6 +1,6 @@
 //when user is in standby and he clicks then go back from standby
 
-setInterval(function() {
+setInterval(function(){
     //if user clicks then go back to screen
     if(document.getElementById('content').style.display == 'none'){
 
@@ -27,13 +27,14 @@ setInterval(function() {
             
                 
         } 
-       
+    
                 
-
-
-
-
     })
+    }
+
+
+
+    
     
     
 
