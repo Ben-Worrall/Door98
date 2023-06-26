@@ -24,7 +24,7 @@ function blackscreenshutdown(){
 
 
 function getTostartbutton(){
-    body.style.cursor = "pointer"
+    body.style.cursor = "auto"
     if (location.hostname == "localhost" || location.hostname === "127.0.0.1"){
         window.location = '/index.html'
     }

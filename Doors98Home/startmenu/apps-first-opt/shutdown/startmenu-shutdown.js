@@ -74,6 +74,16 @@ let curSel =  document.querySelector('.startmenu-shutdown-bottom-container input
     if(curSelARR[0] === "Stand by "){  //stand by
 
         
+        let content = document.getElementById('content')
+        let bodyHTML = document.getElementById('Body')
+        content.style.display = "none"
+        bodyHTML.style.backgroundColor = "black"
+        document.getElementById('html').style.cursor = 'none'
+
+
+
+
+        
 
 
 
