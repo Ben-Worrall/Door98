@@ -1,38 +1,53 @@
-let dragindex=0;
-let dropindex=0;
-let clone="";
+var columns = document.querySelectorAll('.dropintaskbar');
+var draggingClass = 'dragging';
+var dragSource;
 
-function dragTASK(e)
-{
-e.dataTransfer.setData("text",e.target.id);
+Array.prototype.forEach.call(columns, function (col) {
+  col.addEventListener('dragstart', handleDragStart, false);
+  col.addEventListener('dragenter', handleDragEnter, false)
+  col.addEventListener('dragover', handleDragOver, false);
+  col.addEventListener('dragleave', handleDragLeave, false);
+  col.addEventListener('drop', handleDrop, false);
+  col.addEventListener('dragend', handleDragEnd, false);
+});
+
+function handleDragStart (evt) {
+  dragSource = this;
+  evt.target.classList.add(draggingClass);
+  evt.dataTransfer.effectAllowed = 'move';
+  evt.dataTransfer.setData('text/html', this.innerHTML);
 }
 
-function dropTASK(e)
-{
-e.preventDefault();
-clone=e.target.cloneNode(true);
-let data=e.dataTransfer.getData("text"); 
-if(clone.id !== data) {
-let nodelist=document.getElementById("parent").childNodes;
-for(let i=0;i<nodelist.length;i++)
-{
-if(nodelist[i].id==data)
-{
-dragindex=i;
+function handleDragOver (evt) {
+  evt.dataTransfer.dropEffect = 'move';
+  evt.preventDefault();
 }
 
+function handleDragEnter (evt) {
+  this.classList.add('over');
 }
 
-document.getElementById("iconDropTaskBar").replaceChild(document.getElementById(data),e.target);
+function handleDragLeave (evt) {
+  this.classList.remove('over');
+}
 
-document.getElementById("iconDropTaskBar").insertBefore(clone,document.getElementById("iconDropTaskBar").childNodes[dragindex]);
+function handleDrop (evt) {
+  evt.stopPropagation();
+  
+  if (dragSource !== this) {
+    dragSource.innerHTML = this.innerHTML;
+    this.innerHTML = evt.dataTransfer.getData('text/html');
   }
-
+  
+  evt.preventDefault();
 }
 
-function allowDropTASK(e)
-{
-    e.preventDefault();
+function handleDragEnd (evt) {
+  Array.prototype.forEach.call(columns, function (col) {
+    ['over', 'dragging'].forEach(function (className) {
+      col.classList.remove(className);
+    });
+  });
 }
 
 
