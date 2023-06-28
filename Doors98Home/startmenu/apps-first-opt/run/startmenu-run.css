@@ -1,0 +1,61 @@
+#startmenu-run-app{
+    border-left: .4vh solid white;
+    border-top: .4vh solid white;
+    border-right: .4vh solid black;
+    border-bottom: .4vh solid black;
+    background-color: rgb(187, 187, 187);
+    height: 20vh;
+    width: 25vw;
+    color: white;
+    position: absolute;
+    
+}
+#startmenu-run-top{
+    border-bottom: 0.2vh solid rgb(255, 255, 255);
+    background-image: linear-gradient(to right, rgb(4, 15, 119) ,rgb(62, 78, 145));
+    height:10%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    
+}
+
+#startmenu-run-exit{
+    position: absolute;
+    right: 0;
+    width: 4%;
+    height: 80%;
+    margin-right: 1%;
+    border-left: .1vh solid white;
+    border-top: .1vh solid white;
+    border-right: .1vh solid black;
+    border-bottom: .1vh solid black;
+    background-color: rgb(187, 187, 187);
+    font-size: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#startmenu-run-exit:hover{
+  
+  background-color: rgb(255, 0, 0);
+  color: white;
+  
+}
+#startmenu-run-help{
+    position: absolute;
+    right: 0;
+    width: 4%;
+    height: 80%;
+    margin-right: 7%;
+    border-left: .1vh solid white;
+    border-top: .1vh solid white;
+    border-right: .1vh solid black;
+    border-bottom: .1vh solid black;
+    background-color: rgb(187, 187, 187);
+    font-size: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
