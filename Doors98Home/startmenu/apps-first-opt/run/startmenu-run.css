@@ -4,12 +4,19 @@
     border-right: .4vh solid black;
     border-bottom: .4vh solid black;
     background-color: rgb(187, 187, 187);
-    height: 20vh;
-    width: 25vw;
+    height: 27vh;
+    width: 28vw;
     color: white;
     position: absolute;
     
 }
+
+
+
+/*TOp */
+
+
+
 #startmenu-run-top{
     border-bottom: 0.2vh solid rgb(255, 255, 255);
     background-image: linear-gradient(to right, rgb(4, 15, 119) ,rgb(62, 78, 145));
@@ -18,9 +25,9 @@
     position: absolute;
     display: flex;
     align-items: center;
+    top: 0;
     
 }
-
 #startmenu-run-exit{
     position: absolute;
     right: 0;
@@ -37,12 +44,14 @@
     align-items: center;
     justify-content: center;
 }
+
 #startmenu-run-exit:hover{
-  
+
   background-color: rgb(255, 0, 0);
   color: white;
   
 }
+
 #startmenu-run-help{
     position: absolute;
     right: 0;
@@ -59,3 +68,98 @@
     align-items: center;
     justify-content: center;
 }
+
+
+
+
+/* middle */
+
+
+
+
+#startmenu-run-middle{
+    height:60%;
+    width: 100%;
+    position: absolute;
+    color: black;
+    display: inline;
+    margin-top: 4vh;
+    justify-content: center;
+    align-items: center;
+}
+#startmenu-run-middle-top{
+    display: flex;
+    align-items: center;
+}
+#startmenu-run-middle-top-top{
+    float:left; 
+    width: 5%;
+    margin-left: 2%;
+}
+#startmenu-run-middle-top-bottom{
+    float:right;
+    width: 80%;
+    margin-left: 10%;
+}
+
+
+
+#startmenu-run-middle-bottom{
+    display: flex;
+    align-items: center;
+}
+#startmenu-run-middle-bottom-top{
+    width: 5%;
+    float:left; 
+    margin-left: 2%;
+}
+#startmenu-run-middle-bottom-bottom{
+    float:right; 
+    margin-left: 10%;
+    width: 80%;
+}
+
+
+
+
+/* bottom */
+
+
+
+#startmenu-run-bottom{
+    height:5vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: inline;
+    margin-bottom: 0.1%;
+    margin-right: 12%;
+    
+}
+
+.start-menu-run-mainBNTs{
+    float: right;
+    height: 60%;
+    position: relative;
+    font-size: 80%;
+    border-left: .33vh solid white;
+    border-top: .33vh solid white;
+    border-right: .33vh solid black;
+    border-bottom: .33vh solid black;
+    background-color: rgb(187, 187, 187);
+    margin-right: 1%;
+    width: 20%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
