@@ -1,43 +1,39 @@
-// DOM utility functions:
+let dragindex=0;
+let dropindex=0;
+let clone="";
 
-const ELS = (sel, par) => (par || document).querySelectorAll(sel);
+function dragTASK(e)
+{
+e.dataTransfer.setData("text",e.target.id);
+}
 
+function dropTASK(e)
+{
+e.preventDefault();
+clone=e.target.cloneNode(true);
+let data=e.dataTransfer.getData("text"); 
+if(clone.id !== data) {
+let nodelist=document.getElementById("parent").childNodes;
+for(let i=0;i<nodelist.length;i++)
+{
+if(nodelist[i].id==data)
+{
+dragindex=i;
+}
 
-// TASK:
+}
 
-const ELS_child = ELS(".dropintaskbar");
+document.getElementById("iconDropTaskBar").replaceChild(document.getElementById(data),e.target);
 
-let EL_drag; // Used to remember the dragged element
+document.getElementById("iconDropTaskBar").insertBefore(clone,document.getElementById("iconDropTaskBar").childNodes[dragindex]);
+  }
 
-const addEvents = (EL_ev) => {
-  EL_ev.setAttribute("draggable", "true");
-  EL_ev.addEventListener("dragstart", onstart);
-  EL_ev.addEventListener("dragover", (ev) => ev.preventDefault());
-  EL_ev.addEventListener("drop", ondrop);
-};
+}
 
-const onstart = (ev) => EL_drag = ev.currentTarget;
-
-const ondrop = (ev) => {
-  if (!EL_drag) return;
-
-  ev.preventDefault();
-  console.log(ev.currentTarget)
-  const EL_targ = ev.currentTarget;
-  const EL_targClone = EL_targ.cloneNode(true);
-  const EL_dragClone = EL_drag.cloneNode(true);
-  
-  EL_targ.replaceWith(EL_dragClone);
-  EL_drag.replaceWith(EL_targClone);
-  
-  addEvents(EL_targClone); // Reassign events to cloned element
-  addEvents(EL_dragClone); // Reassign events to cloned element
-  
-  EL_drag = undefined;
-  
-};
-
-ELS_child.forEach((EL_child) => addEvents(EL_child));
+function allowDropTASK(e)
+{
+    e.preventDefault();
+}
 
 
 
