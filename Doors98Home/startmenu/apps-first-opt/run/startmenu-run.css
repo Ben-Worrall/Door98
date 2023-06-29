@@ -8,6 +8,10 @@
     width: 28vw;
     color: white;
     position: absolute;
+    bottom: 0;
+    margin-bottom: 8.2vh;
+    left: 0;
+    margin-left: 0.1vw;
     
 }
 
@@ -153,10 +157,6 @@
     display: flex;
     align-items: center;
 }
-
-
-
-
 
 
 

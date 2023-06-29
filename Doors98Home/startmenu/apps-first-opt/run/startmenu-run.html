@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./startmenu-run.css">
+    <link rel="stylesheet" href="./startmenu/apps-first-opt/run/startmenu-run.css">
 </head>
 <body>
     
@@ -10,7 +10,7 @@
         <div id="startmenu-run-top">
            Run
            <button id="startmenu-run-help" onclick="help()">?</button>
-            <button id="startmenu-run-exit" onclick="exit()">X</button>
+            <button id="startmenu-run-exit" onclick="exitFirstapp()">X</button>
         
         </div>
 
@@ -35,13 +35,30 @@
                     Open:
                 </div>
                 <div id="startmenu-run-middle-bottom-bottom">
-                <input list="apps"  type="search"  autocomplete="off" style="width: 90%;"  autofocus>
-                    <datalist id="apps" >
-                        <option value="Edge">
-                        <option value="Firefox">
-                        <option value="Chrome">
-                        <option value="Opera">
-                        <option value="Safari">
+                <input list="datalist-apps" role="combobox"  type="search"  autocomplete="off" style="width: 90%;" autofocus>
+                    <datalist id="datalist-apps" >
+                        <option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option>
+    <option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
+    <option value="Firefox">Firefox</option>
                     </datalist>
 
                 </div>
@@ -54,7 +71,7 @@
 
         <div id="startmenu-run-bottom">  
             <button class="start-menu-run-mainBNTs">Browse...</button>
-            <button class="start-menu-run-mainBNTs">Cancel</button>
+            <button class="start-menu-run-mainBNTs" onclick="exitFirstapp()">Cancel</button>
             <button class="start-menu-run-mainBNTs">OK</button>
         </div>
         
@@ -71,7 +88,7 @@
     
     
     
-<script src="./startmenu-run.js"></script>
+<script src="./startmenu/apps-first-opt/run/startmenu-run.js"></script>
 </body>
 </html>
 

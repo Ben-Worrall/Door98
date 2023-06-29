@@ -142,9 +142,44 @@ document.getElementById('content').addEventListener("mouseup", function(event) {
 //when user clicks on the first menu options
 
 //update windows
+
+
+
+
+
+
+
 //help
+
+
+
+
+
+
 //run
-//logoff
+Run.addEventListener('click', ()=>{
+    let shut = document.getElementById('start-menu-bottom').getBoundingClientRect();
+
+    firstApp.style.display=""
+    fetch('startmenu/apps-first-opt/run/startmenu-run.html')
+    .then(res=>res.text())
+    .then(data=>{
+        firstApp.innerHTML = data
+    })
+    
+   
+    let script= document.createElement("script");
+script.src = "./startmenu/apps-first-opt/run/startmenu-run.js"
+Body.appendChild( script )
+MenuPopup.style.display = "none"
+firstApp.style.position = "absolute"
+firstApp.style.right = "0"
+
+
+
+})
+
+
 
 
 //shutdown

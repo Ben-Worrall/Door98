@@ -12,7 +12,7 @@ let allEL = document.getElementsByTagName("*");
 //the buttons on the app
 
 //exit button
- function exit(){
+ function exitFirstapp(){
     StartmenuFirstApps.style.display = "none"
     StartmenuFirstApps.innerHTML = ""
     
