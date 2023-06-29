@@ -8,10 +8,7 @@ var homeICONS = document.querySelectorAll('.iconBody')
 
 //open
 
-//new
 
-
-//quick view
 
 //add to zip
 
@@ -56,19 +53,55 @@ document.getElementById('ContextMenuIconHome-pintotaskbar').addEventListener('cl
         } 
     }
 
-
-
-
-    
-
-//clear the other boxes
     
 
 
 })
 
+
+
+
 //delete
+document.getElementById('ContextMenuIconHome-rename').addEventListener('click', function(){
+
+    
+    /*
+        for(let k = 0; k < homeICONS.length; k++){
+            if(homeICONS[k].style.backgroundColor == "rgba(132, 134, 134, 0.7)"){
+                
+               
+                
+               return
+                
+            }
+        
+    
+        
+        }
+    */
+    })
+
+
 
 //rename
+document.getElementById('ContextMenuIconHome-rename').addEventListener('click', function(){
 
-//properties
+    
+/*
+    for(let k = 0; k < homeICONS.length; k++){
+        if(homeICONS[k].style.backgroundColor == "rgba(132, 134, 134, 0.7)"){
+            
+           
+            
+           return
+            
+        }
+    
+
+    
+    }
+*/
+})
+
+
+
