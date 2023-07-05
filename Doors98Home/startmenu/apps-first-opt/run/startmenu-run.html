@@ -35,7 +35,7 @@
                     Open:
                 </div>
                 <div id="startmenu-run-middle-bottom-bottom">
-                <input list="datalist-apps" role="combobox"  type="search"  autocomplete="off" style="width: 90%;" autofocus>
+                <input list="datalist-apps" role="combobox"  type="search"  autocomplete="off" style="width: 90%;" value="" autofocus>
                     <datalist id="datalist-apps" >
                         <option value="Microsoft Edge">Microsoft Edge</option>
     <option value="Firefox">Firefox</option><option value="Microsoft Edge">Microsoft Edge</option>
@@ -70,9 +70,9 @@
 
 
         <div id="startmenu-run-bottom">  
-            <button class="start-menu-run-mainBNTs">Browse...</button>
-            <button class="start-menu-run-mainBNTs" onclick="exitFirstapp()">Cancel</button>
-            <button class="start-menu-run-mainBNTs">OK</button>
+            <button class="start-menu-run-mainBNTs" id="startmenu-run-bottom-button-browse">Browse...</button>
+            <button class="start-menu-run-mainBNTs" id="startmenu-run-bottom-button-cancel" onclick="exitFirstapp()" >Cancel</button>
+            <button class="start-menu-run-mainBNTs" id="startmenu-run-bottom-button-ok">OK</button>
         </div>
         
             
