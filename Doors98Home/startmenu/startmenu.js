@@ -1,7 +1,7 @@
 var Startmenu = document.getElementById('StartMenu')
 var MenuPopup = document.getElementById('StartMenu-popup')
 
-var DoorsUpdate = document.getElementById('StartMenu-DoorsUpdate')
+var DoorsUpdate = document.getElementById('start-menu-window-update-bnt')
 var Programs = document.getElementById('StartMenu-Programs')
 var Favorites = document.getElementById('StartMenu-Favorites')
 var Documents = document.getElementById('StartMenu-Documents')
@@ -144,7 +144,28 @@ document.getElementById('content').addEventListener("mouseup", function(event) {
 //update windows
 
 
+DoorsUpdate.addEventListener('click', ()=>{
 
+    firstApp.style.display=""
+    fetch('startmenu/apps-first-opt/doorsupdate/startmenu-doorsupdate.html')
+    .then(res=>res.text())
+    .then(data=>{
+        firstApp.innerHTML = data
+    })
+    
+   
+    let script= document.createElement("script");
+script.src = "./startmenu/apps-first-opt/doorsupdate/startmenu-doorsupdate.js"
+Body.appendChild( script )
+MenuPopup.style.display = "none"
+firstApp.style.position = "absolute"
+firstApp.style.top = "50%"
+firstApp.style.right = "50%"
+firstApp.style.transform = "translate(50%,-50%)"
+
+
+
+})
 
 
 
@@ -158,7 +179,7 @@ document.getElementById('content').addEventListener("mouseup", function(event) {
 
 //run
 Run.addEventListener('click', ()=>{
-    let shut = document.getElementById('start-menu-bottom').getBoundingClientRect();
+    
 
     firstApp.style.display=""
     fetch('startmenu/apps-first-opt/run/startmenu-run.html')
@@ -174,7 +195,8 @@ Body.appendChild( script )
 MenuPopup.style.display = "none"
 firstApp.style.position = "absolute"
 firstApp.style.right = "0"
-
+firstApp.style.marginBottom = "0.3vw"
+firstApp.style.transform = ""
 
 
 })
@@ -184,7 +206,7 @@ firstApp.style.right = "0"
 
 //shutdown
 ShutDown.addEventListener('click', ()=>{
-    let shut = document.getElementById('start-menu-bottom').getBoundingClientRect();
+    
 
     firstApp.style.display=""
     fetch('startmenu/apps-first-opt/shutdown/startmenu-shutdown.html')
@@ -198,6 +220,10 @@ ShutDown.addEventListener('click', ()=>{
 script.src = "./startmenu/apps-first-opt/shutdown/startmenu-shutdown.js"
 Body.appendChild( script )
 MenuPopup.style.display = "none"
+firstApp.style.position = "absolute"
+firstApp.style.top = "50%"
+firstApp.style.right = "50%"
+firstApp.style.transform = "translate(50%,-50%)"
 
 //blur everything else 
 let allEL = document.getElementsByTagName("*");
