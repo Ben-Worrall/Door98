@@ -15,7 +15,7 @@ var secondPopup = document.getElementById('StartMenu-popup-second')
 var firstApp = document.getElementById('StartMenu-popup-first-apps')
 var Body = document.getElementById('Body')
 var allpossibleapps = document.getElementsByClassName('allow-hover')
-
+var startMenuClassExpand = document.getElementsByClassName('startMenu-class-expand')
 
 document.getElementById('StartMenu').addEventListener('click', ()=>{
    
@@ -31,6 +31,8 @@ document.getElementById('StartMenu').addEventListener('click', ()=>{
 
 //when user hovers over programs,settings,favorites,documents,find. then show more options
 Programs.onmouseover = function(){
+    Programs.style.backgroundColor = "blue"
+    Programs.style.color = "white"
     let Program = Programs.getBoundingClientRect();
     secondPopup.style.display=""
     fetch('startmenu/startmenu-second-options/html/Programs.html')
@@ -41,13 +43,20 @@ Programs.onmouseover = function(){
     secondPopup.style.position = "absolute"
     secondPopup.style.top = Program.top + "px"
     secondPopup.style.marginLeft = "16.5vw"
-    
+    secondPopup.className = "StartMenu-Programs"
 
 };
-
+Programs.onmouseleave = function(){
+    Programs.style.backgroundColor = "rgb(190, 190, 190)"
+    Programs.style.color = "black"
+}
 
 
 Favorites.onmouseover = function(){
+    Favorites.style.backgroundColor = "blue"
+    Favorites.style.color = "white"
+
+
 
     let Favorite = Favorites.getBoundingClientRect();
     secondPopup.style.display=""
@@ -59,13 +68,19 @@ Favorites.onmouseover = function(){
     secondPopup.style.position = "absolute"
     secondPopup.style.top = Favorite.top + "px"
     secondPopup.style.marginLeft = "16.5vw"
-    
+    secondPopup.className = "StartMenu-Favorites"
 
 };
-
+Favorites.onmouseleave = function(){
+    Favorites.style.backgroundColor = "rgb(190, 190, 190)"
+    Favorites.style.color = "black"
+}
 
 
 Documents.onmouseover = function(){
+    Documents.style.backgroundColor = "blue"
+    Documents.style.color = "white"
+
 
     let Document = Documents.getBoundingClientRect();
     secondPopup.style.display=""
@@ -77,13 +92,20 @@ Documents.onmouseover = function(){
     secondPopup.style.position = "absolute"
     secondPopup.style.top = Document.top + "px"
     secondPopup.style.marginLeft = "16.5vw"
-    
+    secondPopup.className = "StartMenu-Documents"
 
 };
-
+Documents.onmouseleave = function(){
+    Documents.style.backgroundColor = "rgb(190, 190, 190)"
+    Documents.style.color = "black"
+}
 
 
 Settings.onmouseover = function(){
+    Settings.style.backgroundColor = "blue"
+    Settings.style.color = "white"
+
+
     let Setting = Settings.getBoundingClientRect();
     secondPopup.style.display=""
     fetch('startmenu/startmenu-second-options/html/Settings.html')
@@ -94,15 +116,19 @@ Settings.onmouseover = function(){
     secondPopup.style.position = "absolute"
     secondPopup.style.top = Setting.top + "px"
     secondPopup.style.marginLeft = "16.5vw"
-
+    secondPopup.className = "StartMenu-Settings"
     
 
 };
-
+Settings.onmouseleave = function(){
+    Settings.style.backgroundColor = "rgb(190, 190, 190)"
+    Settings.style.color = "black"
+}
 
 
 Find.onmouseover = function(){
-
+    Find.style.backgroundColor = "blue"
+    Find.style.color = "white"
 
     let Fin = Find.getBoundingClientRect();
     secondPopup.style.display=""
@@ -114,8 +140,15 @@ Find.onmouseover = function(){
     secondPopup.style.position = "absolute"
     secondPopup.style.top = Fin.top + "px"
     secondPopup.style.marginLeft = "16.5vw"
+    secondPopup.className = "StartMenu-Find"
     console.log(secondPopup.style.top)
 };
+Find.onmouseleave = function(){
+    Find.style.backgroundColor = "rgb(190, 190, 190)"
+    Find.style.color = "black"
+}
+
+
 
 //hover over anything else then stop displaying the hovered over stuff
 Body.onmouseover = function(e){
@@ -241,4 +274,21 @@ for (var i=0; i < allEL.length; i++) {
 
 })
 
+//when hover over first optoin and move to second set of options, keep the first option blue
+secondPopup.onmouseover = function(e){
+    //console.log(secondPopup.className)
+    //console.log(document.getElementById(secondPopup.className))
+    document.getElementById(secondPopup.className).style.backgroundColor = "blue"
+    document.getElementById(secondPopup.className).style.color = "white"
+}
+secondPopup.onmouseout = function(e){
+    //console.log(secondPopup.className)
+    //console.log(document.getElementById(secondPopup.className))
+    document.getElementById(secondPopup.className).style.backgroundColor = "rgb(190, 190, 190)"
+    document.getElementById(secondPopup.className).style.color = "black"
+}
 
+
+
+
+setInterval(ccccc, 1)
