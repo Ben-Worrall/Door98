@@ -14,6 +14,8 @@ var ShutDown = document.getElementById('StartMenu-ShutDown')
 var secondPopup = document.getElementById('StartMenu-popup-second')
 var firstApp = document.getElementById('StartMenu-popup-first-apps')
 var Body = document.getElementById('Body')
+var allpossibleapps = document.getElementsByClassName('allow-hover')
+
 
 document.getElementById('StartMenu').addEventListener('click', ()=>{
    
@@ -118,7 +120,7 @@ Find.onmouseover = function(){
 //hover over anything else then stop displaying the hovered over stuff
 Body.onmouseover = function(e){
 if(e.target != Find && e.target != Documents && e.target != Favorites && e.target != Programs && e.target != Settings){
-    if(e.target.id != "start-menu-mid" && e.target.id != "StartMenu-popup" && e.target.classList != "main" && e.target.classList != "mainopts" && e.target.classList != "triangleAtag"){
+    if(e.target.id != "start-menu-mid" && e.target.id != "StartMenu-popup" && e.target.classList != "main" && e.target.classList != "mainopts" && e.target.classList != "triangleAtag" && e.target.classList != "allow-hover"){
         secondPopup.style.display="none"
        
     }
@@ -238,7 +240,5 @@ for (var i=0; i < allEL.length; i++) {
 
 
 })
-
-
 
 
