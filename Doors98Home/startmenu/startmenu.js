@@ -153,7 +153,7 @@ Find.onmouseleave = function(){
 //hover over anything else then stop displaying the hovered over stuff
 Body.onmouseover = function(e){
 if(e.target != Find && e.target != Documents && e.target != Favorites && e.target != Programs && e.target != Settings){
-    if(e.target.id != "start-menu-mid" && e.target.id != "StartMenu-popup" && e.target.classList != "main" && e.target.classList != "mainopts" && e.target.classList != "triangleAtag" && e.target.classList != "allow-hover"){
+    if(e.target.id != "start-menu-mid" && e.target.id != "StartMenu-popup" && e.target.classList != "main" && e.target.classList != "mainopts" && e.target.classList != "triangleAtag" && e.target.classList != "allow-hover" && e.target.classList != "startmenu-firstopt-icons"){
         secondPopup.style.display="none"
        
     }
@@ -291,4 +291,3 @@ secondPopup.onmouseout = function(e){
 
 
 
-setInterval(ccccc, 1)
