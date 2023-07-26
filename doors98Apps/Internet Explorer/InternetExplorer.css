@@ -1,0 +1,41 @@
+#internetexplorer-topbar{
+    background-color: blue;
+    color: white;
+    height: 2vw;
+    display: flex;
+    align-items: center;
+}
+#internetexplorer-topbody{
+    width: 100%;
+    background-color: grey;
+    height: fit-content;
+    position: absolute;
+    
+}
+#internetexplorer-topbody-top{
+    margin:0.1vh;
+    width: 100%;
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+    border: .1vw solid rgb(184, 182, 182);
+}
+#internetexplorer-topbody-mid{
+    margin:0.1vh;
+    width: 100%;
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+    border: .1vw solid rgb(184, 182, 182);
+}
+#internetexplorer-topbody-bottom{
+    margin:0.1vh;
+    width: 100%;
+    position: relative;
+    float: left;
+    display: flex;
+    align-items: center;
+    border: .1vw solid rgb(184, 182, 182);
+}
