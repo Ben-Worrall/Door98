@@ -12,17 +12,17 @@
 
 <div id="internetexplorer-topbar">
 
-  <div style="float: left;">
+  <div id="internetexplorer-topbar-left">
     <img>
     Megahard Internet Explorer
   </div>
 
 
 
-     <div style="float: right;">
-        <button>🗕</button>
-        <button></button>
-        <button>x</button>
+     <div id="internetexplorer-topbar-right">
+        <button id="internetexplorer-topbar-right-minimize">🗕</button>
+        <button id="internetexplorer-topbar-right-fullscreen"></button>
+        <button id="internetexplorer-topbar-right-exit">x</button>
     </div>
 </div>
 
@@ -35,12 +35,12 @@
 
     <div id="internetexplorer-topbody-top">
 
-        <button>file</button>
-        <button>Edit</button>
-        <button>View</button>
-        <button>Favorites</button>
-        <button>Tools</button>
-        <button>Help</button>
+        <button class="internetexplorer-topbody-top-buttons">file</button>
+        <button class="internetexplorer-topbody-top-buttons">Edit</button>
+        <button class="internetexplorer-topbody-top-buttons">View</button>
+        <button class="internetexplorer-topbody-top-buttons">Favorites</button>
+        <button class="internetexplorer-topbody-top-buttons">Tools</button>
+        <button class="internetexplorer-topbody-top-buttons">Help</button>
 
 
     </div>
@@ -48,22 +48,22 @@
     <!-- new -->
 
     <div id="internetexplorer-topbody-mid">
-        <div>
-            <button>⇦Back</button>
-            <button>Forward⇨</button>
+        <div id="internetexplorer-topbody-mid-left">
+            <button style="float: left;">⇦Back</button>
+            <button style="float: right;">Forward⇨</button>
         </div>
-        <div>
+        <div id="internetexplorer-topbody-mid-midleft">
             <button>Stop</button>
             <button>Refresh</button>
             <button>Home</button>
         </div>
-        <div>
+        <div id="internetexplorer-topbody-mid-midright">
             <button>Search</button>
             <button>Favorites</button>
             <button>History</button>
         </div>
-        <div>
-            <button></button>
+        <div id="internetexplorer-topbody-mid-right">
+            <button>⋙</button>
         </div>
         
     </div>
@@ -75,10 +75,9 @@
         <form method="GET" action="https://www.google.com/search" target="_blank">
     
             <input name="q" type="text" placeholder="Address">
-            <input type="submit">
+            <button type="submit">Go➥</button>
         </form>
-        <button>Go⏎</button>
-        <button>Links</button>
+        <button>Links⯮</button>
     </div>
 
 
