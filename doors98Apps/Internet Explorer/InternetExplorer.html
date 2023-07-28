@@ -71,17 +71,24 @@
     <!-- new -->
 
     <div id="internetexplorer-topbody-bottom">
-        <a>Address</a>
-        <form method="GET" action="https://www.google.com/search" target="_blank">
+        <div style="width: 15%;float: left;">
+            <a id="internetexplorer-topbody-bottom-address-text">Address</a>
+        </div>
+        <div style="width: 900%;float: left;height: 100%;">
+            <form method="GET" action="https://www.google.com/search" target="_blank" id="internetexplorer-topbody-bottom-formholder">
     
-            <input name="q" type="text" placeholder="Address">
-            <button type="submit">Go➥</button>
-        </form>
-        <button>Links⯮</button>
+                <input name="q" type="text" placeholder="Address" id="internetexplorer-address-searchbar">
+                <button type="submit" id="internetexplorer-address-go">Go➥</button>
+            </form>
+        </div>
+        <div style="width: 50%;float: right;">
+            <button id="internetexplorer-address-links">Links⯮</button>
+        </div>
+            
+        </div>
+
+
     </div>
-
-
-</div>
 
 
 <!-- new -->
