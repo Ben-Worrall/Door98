@@ -17,6 +17,7 @@ var Body = document.getElementById('Body')
 var allpossibleapps = document.getElementsByClassName('allow-hover')
 var startMenuClassExpand = document.getElementsByClassName('startMenu-class-expand')
 
+
 document.getElementById('StartMenu').addEventListener('click', ()=>{
    
     if(MenuPopup.style.display == "none"){
@@ -166,7 +167,7 @@ if(e.target != Find && e.target != Documents && e.target != Favorites && e.targe
 
 document.getElementById('content').addEventListener("mouseup", function(event) {
     
-    if (!MenuPopup.contains(event.target) && !Startmenu.contains(event.target) && !firstApp.contains(event.target)) {
+    if (!MenuPopup.contains(event.target) && !Startmenu.contains(event.target) && !firstApp.contains(event.target) && !secondPopup.contains(event.target)) {
         MenuPopup.style.display = "none"
         secondPopup.style.display = "none"
     }
