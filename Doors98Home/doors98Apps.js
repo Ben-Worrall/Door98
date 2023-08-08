@@ -29,21 +29,23 @@ MenuPopup.style.display = "none"
 
 for(let i = 0; i < TaskbarIconRow.length; i++){
     
-    if(TaskbarIconRow[i].innerHTML == ""){
+    
         
-        
-        let img = document.createElement('img')
-        img.classList.add('imgForIconInTaskBar')
-
-        img.src = e.parentNode.childNodes[1].childNodes[1].src
-        TaskbarIconRow[i].appendChild(img)
-
+    //console.log(TaskbarIconRow[i].childNodes[1].alt)
+    if(TaskbarIconRow[i].childNodes[1].alt === "InternetExplorer"){
+        return
+    }else if(TaskbarIconRow[i].childNodes[1].alt === ""){
+     //console.log(e.parentNode.childNodes[1].childNodes[1].src)
+     TaskbarIconRow[i].childNodes[1].src = e.parentNode.childNodes[1].childNodes[1].src
+     TaskbarIconRow[i].childNodes[1].alt = "InternetExplorer"
 
         return
+    } else {
+        return
+    }
+    
+        
 
-        
-        
-    } 
     
 }
 
