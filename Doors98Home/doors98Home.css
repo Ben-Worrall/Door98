@@ -388,4 +388,12 @@ float: left;
     align-items: center;
     justify-content: left;
 }
-.
+
+
+.doors98apps{
+   
+    z-index: 10000;
+}
+.minimizedApp{
+    display: none;
+}

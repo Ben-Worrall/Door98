@@ -292,3 +292,4 @@ secondPopup.onmouseout = function(e){
 
 
 
+//load up when user clicks on icon in taskbar

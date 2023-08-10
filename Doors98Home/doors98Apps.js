@@ -1,5 +1,5 @@
-
-var firstApp = document.getElementById('doors98apps')
+var firstApp = document.createElement('div')
+    firstApp.classList.add('doors98apps')
 var TaskbarIconRow = document.querySelectorAll('.dropintaskbar')
 
 
@@ -15,7 +15,11 @@ function internetExplorerLoad(e){
         firstApp.innerHTML = data
     })
     
-   
+    
+    document.getElementById('doorsappsholder').appendChild(firstApp)
+    firstApp.classList.add('InternetExplorer')
+
+
     let script= document.createElement("script");
 script.src = "doors98Apps/InternetExplorer/InternetExplorer.js"
 Body.appendChild( script )
