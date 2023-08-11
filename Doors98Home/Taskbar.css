@@ -1,0 +1,115 @@
+
+/* task bar wiht its elements*/
+#TaskBar{
+    outline: 0.3vw solid rgb(235, 235, 235);
+    background-color: rgb(187, 187, 187);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0.3vw;
+    margin-left: 0.3vw;
+    margin-right: 0.3vw;
+    width: 99.4vw;
+    height:3.5vw;
+    display: inline-block;
+    
+    
+    
+}
+
+
+#iconDropTaskBar{
+
+    width: 82%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    
+}
+.dropintaskbar{
+    width: 4.6%;
+    float: left;
+    height: 100%;
+    margin-left: 0.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
+
+
+  .draggable.dragging {
+    opacity: .5;
+  }
+
+
+
+
+
+
+
+  #contextMenuIconHome{
+    position: fixed;
+    text-align: center;
+    background-color: rgb(187, 187, 187);
+    border-right: 0.4vh solid black;
+    border-bottom: 0.4vh solid black;
+    border-left: 0.4vh solid rgb(255, 255, 255);
+    border-top: 0.4vh solid rgb(255, 255, 255);
+    z-index: 1000;
+    visibility: hidden;
+}
+
+.context-menu-IconHome ul {
+    padding: 0px;
+    margin: 0px;
+    min-width: 150px;
+    list-style: none;
+    border-top: .05vh solid white;
+    border-bottom: .05vh solid rgb(150, 150, 150);
+}
+
+.context-menu-IconHome ul li {
+    padding-bottom: 3%;
+    padding-top: 3%;
+    width: 100%;
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+    
+}
+.context-menu-IconHome ul li a{
+    
+    margin-left: 15%;
+    
+    
+}
+
+
+
+.context-menu-IconHome ul li:hover {
+    color: rgb(255, 255, 255);
+    background-color: blue;
+    
+}
+
+
+
+/* 
+icon in taskbar
+*/
+.imgForIconInTaskBar{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    
+}
+.HoverOverIcon:hover{
+    background-color: rgb(255, 255, 255, 0.7);
+}
+

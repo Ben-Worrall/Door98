@@ -15,7 +15,6 @@ function internetExplorerLoad(e){
         firstApp.innerHTML = data
     })
     
-    
     document.getElementById('doorsappsholder').appendChild(firstApp)
     firstApp.classList.add('InternetExplorer')
 
@@ -42,7 +41,8 @@ for(let i = 0; i < TaskbarIconRow.length; i++){
      //console.log(e.parentNode.childNodes[1].childNodes[1].src)
      TaskbarIconRow[i].childNodes[1].src = e.parentNode.childNodes[1].childNodes[1].src
      TaskbarIconRow[i].childNodes[1].alt = "InternetExplorer"
-
+     TaskbarIconRow[i].childNodes[1].classList.add('imgForIconInTaskBar')
+     TaskbarIconRow[i].childNodes[1].onclick = function(e) { IconClicked(e) }
         return
     } else {
         return
