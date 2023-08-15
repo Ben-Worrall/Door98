@@ -31,6 +31,7 @@ for(let i = 0; i < TaskbarIconRow.length; i++){
            TaskbarIconRow[i].childNodes[1].alt=""
            TaskbarIconRow[i].childNodes[1].classList.remove('imgForIconInTaskBar')
            TaskbarIconRow[i].classList.remove('HoverOverIcon')
+           TaskbarIconRow[i].classList.remove('CurrentAppOpen')
         }
     }
 }
