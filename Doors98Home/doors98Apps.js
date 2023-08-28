@@ -25,10 +25,29 @@ setInterval(CheckForApps, 1);
 }; CheckForApps();
 ;
 
+
+
+
+var onMDownElTop = 0
+var onMDownElLeft = 0
+var onMDownPosX = 0
+var onMDownPosY = 0
 function dragElement(elmnt) {
-  
+    elmnt = elmnt || window.event;
+    
     // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
+
+   elmnt.onmousedown = function (e){
+    //current/starting position
+    onMDownPosX = e.clientX
+    onMDownPosY = e.clientY
+    onMDownElLeft = elmnt.parentNode.parentNode.getBoundingClientRect().left
+    onMDownElTop = elmnt.parentNode.parentNode.getBoundingClientRect().top
+    //console.log(onMDownPosX)
+    //console.log(elmnt.parentNode.parentNode.getBoundingClientRect().left)
+    dragMouseDown()
+    
+   }
   
 
   function dragMouseDown(e) {
@@ -46,18 +65,45 @@ function dragElement(elmnt) {
     e = e || window.event;
     e.preventDefault();
     // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
+    
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element's new position:
-    elmnt.parentNode.parentNode.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.parentNode.parentNode.left = (elmnt.offsetLeft - pos1) + "px";
+    //elmnt.parentNode.parentNode.style.top = (elmnt.offsetTop - pos4) + "px"
     elmnt.parentNode.parentNode.style.width = "60vw"
     elmnt.parentNode.parentNode.style.height = "60vh"
+    
 
-    console.log(elmnt.parentNode)
+    //move element left or right using a bit of maths
+    if(window.innerWidth > e.clientX > 0 ){
+        if((e.clientX - onMDownPosX) < 0){
+            let x = (e.clientX - onMDownPosX)* -1
+            elmnt.parentNode.parentNode.style.left = (onMDownElLeft - x) + "px"
+    
+        }else {
+            let x = (e.clientX - onMDownPosX)
+            elmnt.parentNode.parentNode.style.left = (onMDownElLeft + x) + "px"
+        }
+
+
+    }
+    
+
+if(window.innerHeight > e.clientY > 0){
+    console.log(e.clientY, window.innerHeight)
+    //move element up or down using a bit of maths
+    if((e.clientY - onMDownPosX) < 0){
+        let y = (e.clientY - onMDownPosY)* -1
+        elmnt.parentNode.parentNode.style.top = (onMDownElTop - y) + "px"
+
+    }else {
+        let y = (e.clientY - onMDownPosY)
+        elmnt.parentNode.parentNode.style.top = (onMDownElTop + y) + "px"
+    }
+
   }
+  }
+
 
   function closeDragElement() {
     // stop moving when mouse button is released:
