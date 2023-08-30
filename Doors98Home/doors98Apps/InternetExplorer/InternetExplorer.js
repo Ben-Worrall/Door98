@@ -58,11 +58,17 @@ fullscreen.onclick = function(e){
     if(e.target.parentNode.parentNode.parentNode.parentNode.getBoundingClientRect().height = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.getBoundingClientRect().height){
         if(e.target.parentNode.parentNode.parentNode.parentNode.getBoundingClientRect().width === e.target.parentNode.parentNode.parentNode.parentNode.parentNode.getBoundingClientRect().width){
             e.target.parentNode.parentNode.parentNode.parentNode.style.height = "60vh"
-            e.target.parentNode.parentNode.parentNode.parentNode.style.left = "60vw"
-            e.target.parentNode.parentNode.parentNode.parentNode.style.top = "50%"
-            e.target.parentNode.parentNode.parentNode.parentNode.style.left = "50%"
-            e.target.parentNode.parentNode.parentNode.parentNode.style.transform = "translate(-50%, -50%);"
+            e.target.parentNode.parentNode.parentNode.parentNode.style.width = "60vw"
             e.target.parentNode.parentNode.parentNode.parentNode.style.position = "absolute"
+            
+        } else {
+            e.target.parentNode.parentNode.parentNode.parentNode.style.height = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.getBoundingClientRect().height + "px"
+            e.target.parentNode.parentNode.parentNode.parentNode.style.width = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.getBoundingClientRect().width + "px"
+            e.target.parentNode.parentNode.parentNode.parentNode.style.top = "0"
+            e.target.parentNode.parentNode.parentNode.parentNode.style.left = "0"
         }
     } 
+        
+
+
 }

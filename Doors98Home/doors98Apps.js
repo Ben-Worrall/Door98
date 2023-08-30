@@ -74,16 +74,14 @@ function dragElement(elmnt) {
     elmnt.parentNode.parentNode.style.height = "60vh"
     
 
+
+
+
+
     //move element left or right using a bit of maths
     if(window.innerWidth > e.clientX && e.clientX > 2 ){
-        if((e.clientX - onMDownPosX) < 0){
-            let x = (e.clientX - onMDownPosX)* -1
-            elmnt.parentNode.parentNode.style.left = (onMDownElLeft - x) + "px"
-    
-        }else {
-            let x = (e.clientX - onMDownPosX)
-            elmnt.parentNode.parentNode.style.left = (onMDownElLeft + x) + "px"
-        }
+
+        elmnt.parentNode.parentNode.style.left = (e.clientX - (elmnt.parentNode.parentNode.getBoundingClientRect().width / 2))  + "px"
 
 
     } else{
@@ -92,16 +90,24 @@ function dragElement(elmnt) {
     
 
 if(window.innerHeight > e.clientY && e.clientY > 2){
-    console.log('works')
-    console.log(e.clientY, window.innerHeight)
+    
+    
+    elmnt.parentNode.parentNode.style.left = ((50 / 100) * elmnt.parentNode.parentNode.style.width) + "px"
+    console.log(elmnt.parentNode.parentNode.getBoundingClientRect().left)
+    
     //move element up or down using a bit of maths
+
     if((e.clientY - onMDownPosX) < 0){
+        
         let y = (e.clientY - onMDownPosY)* -1
         elmnt.parentNode.parentNode.style.top = (onMDownElTop - y) + "px"
+        //console.log(elmnt.parentNode.parentNode.style.top)
 
     }else {
+        
         let y = (e.clientY - onMDownPosY)
         elmnt.parentNode.parentNode.style.top = (onMDownElTop + y) + "px"
+        //console.log(elmnt.parentNode.parentNode.style.top)
     }
 
   }else {
