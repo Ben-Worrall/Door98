@@ -78,15 +78,20 @@ function dragElement(elmnt) {
 
 
 
-    //move element left or right using a bit of maths
-    if(window.innerWidth > e.clientX && e.clientX > 2 ){
+    //move app left or right
+    let curXPos = (e.clientX - (elmnt.parentNode.parentNode.getBoundingClientRect().width / 2))
 
-        elmnt.parentNode.parentNode.style.left = (e.clientX - (elmnt.parentNode.parentNode.getBoundingClientRect().width / 2))  + "px"
+console.log(window.innerWidth)
+    if(window.innerWidth >= e.clientX){
+        if(e.clientX >= 0){
+            elmnt.parentNode.parentNode.style.left = curXPos + "px"
+        } 
+        
+    } 
+        
 
 
-    } else{
-        return
-    }
+    //moving app up or down
     
 
 if(window.innerHeight > e.clientY && e.clientY > 2){
@@ -121,6 +126,31 @@ if(window.innerHeight > e.clientY && e.clientY > 2){
     document.onmouseup = null;
     document.onmousemove = null;
   }
+}
+
+
+
+
+
+
+//resize apps
+
+
+
+function CheckForApps2(){
+    let curAppsAll2 = document.querySelectorAll('.dragableForApps')
+    for(let i =0; i< curAppsAll2.length; i++){
+        ResizeElement(curAppsAll2[i])
+    }
+
+
+setInterval(CheckForApps2, 1);
+}; CheckForApps2();
+
+function ResizeElement(CurApp){
+
+    CurApp.style.top
+
 }
 
 
@@ -178,16 +208,8 @@ for(let i = 0; i < TaskbarIconRow.length; i++){
         return
     }
     
-        
-
     
 }
-
-
-
-
-
-
 
 
 
