@@ -81,7 +81,7 @@ function dragElement(elmnt) {
     //move app left or right
     let curXPos = (e.clientX - (elmnt.parentNode.parentNode.getBoundingClientRect().width / 2))
 
-console.log(window.innerWidth)
+//console.log(window.innerWidth)
     if(window.innerWidth >= e.clientX){
         if(e.clientX >= 0){
             elmnt.parentNode.parentNode.style.left = curXPos + "px"
@@ -98,7 +98,7 @@ if(window.innerHeight > e.clientY && e.clientY > 2){
     
     
     elmnt.parentNode.parentNode.style.left = ((50 / 100) * elmnt.parentNode.parentNode.style.width) + "px"
-    console.log(elmnt.parentNode.parentNode.getBoundingClientRect().left)
+    //console.log(elmnt.parentNode.parentNode.getBoundingClientRect().left)
     
     //move element up or down using a bit of maths
 
@@ -138,19 +138,33 @@ if(window.innerHeight > e.clientY && e.clientY > 2){
 
 
 function CheckForApps2(){
-    let curAppsAll2 = document.querySelectorAll('.dragableForApps')
+    let curAppsAll2 = document.querySelectorAll('.doors98apps')
     for(let i =0; i< curAppsAll2.length; i++){
         ResizeElement(curAppsAll2[i])
+        
+        
     }
-
 
 setInterval(CheckForApps2, 1);
 }; CheckForApps2();
 
 function ResizeElement(CurApp){
 
-    CurApp.style.top
+        
+    CurApp.onmousemove = function(e){
+            if(e.clientY == Math.trunc(CurApp.getBoundingClientRect().top) || e.clientY == Math.trunc(CurApp.getBoundingClientRect().bottom)){
+                if(CurApp.getBoundingClientRect().left < e.clientY < CurApp.getBoundingClientRect().right){
+                    console.log('test')
+                    CurApp.style.cursor = "n-resize"
 
+                }
+            }else {
+                CurApp.style.cursor = "auto"
+            }
+        }
+    
+    
+       
 }
 
 
