@@ -151,22 +151,34 @@ setInterval(CheckForApps2, 1);
 function ResizeElement(CurApp){
 
         
+    
     CurApp.onmousemove = function(e){
-            if(e.clientY == Math.trunc(CurApp.getBoundingClientRect().top) || e.clientY == Math.trunc(CurApp.getBoundingClientRect().bottom)){
-                if(CurApp.getBoundingClientRect().left < e.clientY < CurApp.getBoundingClientRect().right){
+                //for top or bottom
+                curAppSize = CurApp.getBoundingClientRect()
+            if(e.clientY < Math.trunc(curAppSize.top)+5 || e.clientY > Math.trunc(curAppSize.top + curAppSize.height)-5){
+                if(curAppSize.left < e.clientY < curAppSize.right){
                     console.log('test')
                     CurApp.style.cursor = "n-resize"
 
                 }
-            }else {
+                //for left or right
+            
+            }else if(e.clientX < Math.trunc(curAppSize.left)+5 || e.clientX > Math.trunc(curAppSize.left + curAppSize.width)-5){
+                if(curAppSize.top < e.clientY < curAppSize.bottom){
+                    console.log('test')
+                    CurApp.style.cursor = "e-resize"
+
+                }
+            }
+            else {
                 CurApp.style.cursor = "auto"
             }
         }
     
     
+    
        
 }
-
 
 
 
