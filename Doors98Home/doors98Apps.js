@@ -169,10 +169,16 @@ function ResizeElement(CurApp){
 
 
     CurApp.onmousedown = function(){
-        dragOnMDown()
+        dragOnMDownTB()
+        dragOnMDownLR()
     }
 
-    function dragOnMDown(e){
+
+
+//drag top or bottom
+
+
+    function dragOnMDownTB(e){
         e = e || window.event;
         e.preventDefault();
 
@@ -181,44 +187,219 @@ function ResizeElement(CurApp){
        document.onmouseup = CloseElDrag
 
 
-       //if the mouse is between 5 pixels from the edge and the edge, then do mousedown
+       //if the mouse is between 5 pixels from the edge and the edge, then do mousedown   CurApp.style.cursor = "n-resize"
 
-       //for top or bottom
-       if(e.clientY < Math.trunc(curAppSize.top)+5 || e.clientY > Math.trunc(curAppSize.top + curAppSize.height)-5){
-        if(curAppSize.left < e.clientY < curAppSize.right){
-            //console.log('test')
-            
-            document.onmousemove = ResizeElUpDown
-            CurApp.style.cursor = "n-resize"
-            
+       //for top/bottom level
+          if(Math.trunc(curAppSize.left) < e.clientX < Math.trunc(curAppSize.right)){
 
-        }
+             //for top level
+            if(e.clientY >= Math.trunc(curAppSize.top)  &&   e.clientY <= Math.trunc(curAppSize.top)+5){
+                //console.log('drag up')
+                document.onmousemove = TopLVLDrag
+                CurApp.style.cursor = "n-resize"
 
 
-        //for left or right
-    }else if(e.clientX < Math.trunc(curAppSize.left)+5 || e.clientX > Math.trunc(curAppSize.left + curAppSize.width)-5){
-        if(curAppSize.top < e.clientY < curAppSize.bottom){
-            //console.log('test')
-            
-            document.onmousemove = ResizeElLeftRight
-            CurApp.style.cursor = "e-resize"
-        }
-    }else {
-        CurApp.style.cursor = "auto"
-    }
+                //for bottom level
+            } else if(e.clientY <= Math.trunc(curAppSize.bottom) && e.clientY >= Math.trunc(curAppSize.bottom)-7.5){
+                document.onmousemove = BottomLVLDrag
+                CurApp.style.cursor = "n-resize"
 
+            }
+
+          
+
+        }else {
+            CurApp.style.cursor = "default"
+          }
+
+
+           
     }
    
+//drag left or right
+
+
+   function dragOnMDownLR(e){
+    e = e || window.event;
+    e.preventDefault();
+
+
+    //when mosue up, then stop being able to resize app
+   document.onmouseup = CloseElDrag
+
+   if(Math.trunc(curAppSize.top) <= e.clientY <= Math.trunc(curAppSize.bottom)){
+
+
+    //for right level
+    if((curAppSize.right-5) <= e.clientX && e.clientX <=  curAppSize.right ){
+        document.onmousemove = RightLVLDrag
+        CurApp.style.cursor = "e-resize"
+        
+
+        //for left level
+    }else if(curAppSize.left <= e.clientX && e.clientX <= (curAppSize.left+5) ){
+        document.onmousemove = LeftLVLDrag
+        CurApp.style.cursor = "e-resize"
+        
+    } else {
+        CurApp.style.cursor = "default"
+    }
+
+
+   
+   }
+
+   }
+
+
 
 
 
     //function to drag element depending on if it goes up or down or left or right
-    function ResizeElUpDown(){
-        //console.log('test')
+
+
+    //up func
+
+
+    function TopLVLDrag(e){
+        e = e || window.event;
+        e.preventDefault();
+
+           //drag up
+        if(e.clientY < curAppSize.top){
+
+            CurApp.style.top = e.clientY + "px"
+            CurApp.style.height = (curAppSize.height) + (curAppSize.top - e.clientY) + "px"
+            CurApp.style.cursor = "n-resize"
+
+
+            //drag down
+        } else if(e.clientY > curAppSize.top){
+
+            CurApp.style.top = e.clientY+ "px"
+            CurApp.style.height = (curAppSize.height) - (e.clientY - curAppSize.top) + "px"
+            CurApp.style.cursor = "n-resize"
+        }
+
+
+
+        console.log('Top Level drag')
     }
-    function ResizeElLeftRight(){
+
+   
+
+   // down func
+
+
+    function BottomLVLDrag(e){
         //console.log('test')
+        e = e || window.event;
+        e.preventDefault();
+
+
+           //drag up
+        if(e.clientY < curAppSize.bottom){
+
+
+            CurApp.style.top = curAppSize.top
+            CurApp.style.height = (Math.trunc(curAppSize.height) - Math.trunc(curAppSize.bottom - e.clientY)) + "px"
+            CurApp.style.cursor = "n-resize"
+            
+
+
+            //drag down
+        } else if(e.clientY > curAppSize.bottom){
+            
+            
+            CurApp.style.top = curAppSize.top
+            CurApp.style.height = ((curAppSize.height) + (e.clientY-curAppSize.bottom)) + "px"
+            CurApp.style.cursor = "n-resize"
+
+        
+        }
+        CurApp.style.cursor = "n-resize"
+
+        console.log('Bottom Level drag')
+
     }
+
+
+
+    //right func
+
+
+    function RightLVLDrag(e){
+        console.log('test')
+        e = e || window.event;
+        e.preventDefault();
+
+
+        //drag right
+        if(e.clientX < curAppSize.right){
+
+            CurApp.style.left = curAppSize.left + "px"
+            CurApp.style.width = (curAppSize.width + ( e.clientX - curAppSize.right)) + "px"
+            CurApp.style.cursor = "e-resize"
+
+
+
+            //drag left
+        } else if(e.clientX > curAppSize.right){
+
+            CurApp.style.left = curAppSize.left + "px"
+            CurApp.style.width = (curAppSize.width +  (e.clientX - curAppSize.right)) + "px"
+            CurApp.style.cursor = "e-resize"
+
+        }
+
+
+
+        console.log('right Level drag')
+
+
+
+    }
+
+
+
+    //left func
+
+
+    function LeftLVLDrag(e){
+        console.log('test')
+        e = e || window.event;
+        e.preventDefault();
+
+
+//drag left
+        if(e.clientX < curAppSize.left){
+
+            CurApp.style.left = e.clientX + "px"
+            CurApp.style.width = (curAppSize.width + (curAppSize.left - e.clientX)) + "px"
+            CurApp.style.cursor = "e-resize"
+
+
+
+            //drag right
+        } else if(e.clientX > curAppSize.left){
+
+            CurApp.style.left = e.clientX + "px"
+            CurApp.style.width = (curAppSize.width +  (curAppSize.left - e.clientX)) + "px"
+            CurApp.style.cursor = "e-resize"
+
+        }
+
+
+        console.log('left Level drag')
+
+
+    }
+
+
+
+
+
+
 
 
 
@@ -229,9 +410,12 @@ function CloseElDrag(){
     document.onmouseup = null;
     document.onmousemove = null;
     document.onmousedown = null
+    CurApp.style.cursor = "default"
 }
 
-    }
+    
+
+}
 
 
 
