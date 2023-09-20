@@ -171,6 +171,7 @@ function ResizeElement(CurApp){
     CurApp.onmousedown = function(){
         dragOnMDownTB()
         dragOnMDownLR()
+        dragOnMDownDiagonal()
     }
 
 
@@ -189,8 +190,8 @@ function ResizeElement(CurApp){
 
        //if the mouse is between 5 pixels from the edge and the edge, then do mousedown   CurApp.style.cursor = "n-resize"
 
-       //for top/bottom level
-          if(Math.trunc(curAppSize.left) < e.clientX < Math.trunc(curAppSize.right)){
+//for top/bottom level
+          if(Math.trunc(curAppSize.left) <= e.clientX <= Math.trunc(curAppSize.right)){
 
              //for top level
             if(e.clientY >= Math.trunc(curAppSize.top)  &&   e.clientY <= Math.trunc(curAppSize.top)+5){
@@ -254,8 +255,79 @@ function ResizeElement(CurApp){
 
 
 
+//drag diagonal  
 
-    //function to drag element depending on if it goes up or down or left or right
+
+function dragOnMDownDiagonal(e){
+    e = e || window.event;
+    e.preventDefault();
+
+    //top left
+    if(e.clientY >= curAppSize.top && e.clientY <= (curAppSize.top+12)){
+        if(e.clientX >= curAppSize.left && e.clientX <= (curAppSize.left+12)){
+           document.onmousemove = DiagonalTOPleft
+           document.onmouseup = CloseElDrag
+           CurApp.style.cursor = "nwse-resize"
+        }
+
+    }
+
+
+
+    //top right
+    if(e.clientY >= curAppSize.top && e.clientY <= (curAppSize.top+12)){
+        if(e.clientX <= curAppSize.right && e.clientX >= (curAppSize.right-12)){
+           document.onmousemove = DiagonalTOPright
+           document.onmouseup = CloseElDrag
+           CurApp.style.cursor = "nesw-resize"
+        }
+
+    }
+
+
+
+    //bottom left
+ 
+    if(e.clientY <= curAppSize.bottom && e.clientY >= (curAppSize.bottom-12)){
+        if(e.clientX >= curAppSize.left && e.clientX <= (curAppSize.left+12)){
+           document.onmousemove = DiagonalBOTTOMleft
+           document.onmouseup = CloseElDrag
+           CurApp.style.cursor = "nesw-resize"
+        }
+
+    }
+
+
+
+
+    //bottom right
+
+    if(e.clientY <= curAppSize.bottom && e.clientY >= (curAppSize.bottom-12)){
+        if(e.clientX <= curAppSize.right && e.clientX >= (curAppSize.right-12)){
+           document.onmousemove = DiagonalBOTTOMright
+           document.onmouseup = CloseElDrag
+           CurApp.style.cursor = "nwse-resize"
+        }
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+    //function to drag element depending on if it goes up or down or left or right  or diagonal
+
+
 
 
     //up func
@@ -329,7 +401,7 @@ function ResizeElement(CurApp){
 
 
     function RightLVLDrag(e){
-        console.log('test')
+        //console.log('test')
         e = e || window.event;
         e.preventDefault();
 
@@ -366,12 +438,12 @@ function ResizeElement(CurApp){
 
 
     function LeftLVLDrag(e){
-        console.log('test')
+        //console.log('test')
         e = e || window.event;
         e.preventDefault();
 
 
-//drag left
+           //drag left
         if(e.clientX < curAppSize.left){
 
             CurApp.style.left = e.clientX + "px"
@@ -394,6 +466,54 @@ function ResizeElement(CurApp){
 
 
     }
+
+
+
+    //diagonal top left func
+
+    function DiagonalTOPleft(){
+
+        console.log('top left')
+    }
+
+
+
+
+   //diagonal top right func
+
+   function DiagonalTOPright(){
+
+    console.log('top right')
+   }
+
+
+
+
+   //diagonal bottom left func
+
+   function DiagonalBOTTOMleft(){
+
+    console.log('bottom left')
+   }
+
+
+
+
+   //diagonal bottom right func
+
+   function DiagonalBOTTOMright(){
+
+    console.log('bottom right')
+
+   }
+
+
+
+
+
+
+
+
 
 
 
@@ -438,7 +558,6 @@ function CloseElDrag(){
 
 
 //apps
-
 
 
 
