@@ -79,6 +79,7 @@ function dragElement(elmnt) {
     pos4 = e.clientY;
     // set the element's new position:
     //elmnt.parentNode.parentNode.style.top = (elmnt.offsetTop - pos4) + "px"
+    
     elmnt.parentNode.parentNode.style.width = "60vw"
     elmnt.parentNode.parentNode.style.height = "60vh"
     
@@ -342,7 +343,7 @@ function dragOnMDownDiagonal(e){
 
             CurApp.style.top = e.clientY + "px"
             CurApp.style.height = (curAppSize.height) + (curAppSize.top - e.clientY) + "px"
-            CurApp.style.cursor = "n-resize"
+            
 
 
             //drag down
@@ -350,10 +351,10 @@ function dragOnMDownDiagonal(e){
 
             CurApp.style.top = e.clientY+ "px"
             CurApp.style.height = (curAppSize.height) - (e.clientY - curAppSize.top) + "px"
-            CurApp.style.cursor = "n-resize"
+            
         }
 
-
+        CurApp.style.cursor = "n-resize"
 
         console.log('Top Level drag')
     }
@@ -375,7 +376,7 @@ function dragOnMDownDiagonal(e){
 
             CurApp.style.top = curAppSize.top
             CurApp.style.height = (Math.trunc(curAppSize.height) - Math.trunc(curAppSize.bottom - e.clientY)) + "px"
-            CurApp.style.cursor = "n-resize"
+            
             
 
 
@@ -385,7 +386,7 @@ function dragOnMDownDiagonal(e){
             
             CurApp.style.top = curAppSize.top
             CurApp.style.height = ((curAppSize.height) + (e.clientY-curAppSize.bottom)) + "px"
-            CurApp.style.cursor = "n-resize"
+            
 
         
         }
@@ -411,7 +412,7 @@ function dragOnMDownDiagonal(e){
 
             CurApp.style.left = curAppSize.left + "px"
             CurApp.style.width = (curAppSize.width + ( e.clientX - curAppSize.right)) + "px"
-            CurApp.style.cursor = "e-resize"
+            
 
 
 
@@ -420,11 +421,11 @@ function dragOnMDownDiagonal(e){
 
             CurApp.style.left = curAppSize.left + "px"
             CurApp.style.width = (curAppSize.width +  (e.clientX - curAppSize.right)) + "px"
-            CurApp.style.cursor = "e-resize"
+            
 
         }
 
-
+        CurApp.style.cursor = "e-resize"
 
         console.log('right Level drag')
 
@@ -448,7 +449,7 @@ function dragOnMDownDiagonal(e){
 
             CurApp.style.left = e.clientX + "px"
             CurApp.style.width = (curAppSize.width + (curAppSize.left - e.clientX)) + "px"
-            CurApp.style.cursor = "e-resize"
+            
 
 
 
@@ -457,11 +458,11 @@ function dragOnMDownDiagonal(e){
 
             CurApp.style.left = e.clientX + "px"
             CurApp.style.width = (curAppSize.width +  (curAppSize.left - e.clientX)) + "px"
-            CurApp.style.cursor = "e-resize"
+            
 
         }
 
-
+        CurApp.style.cursor = "e-resize"
         console.log('left Level drag')
 
 
@@ -469,9 +470,62 @@ function dragOnMDownDiagonal(e){
 
 
 
+//diagonals
+
+
+
+
     //diagonal top left func
 
-    function DiagonalTOPleft(){
+
+    function DiagonalTOPleft(e){
+
+        e = e || window.event;
+        e.preventDefault();
+
+           //drag up
+           if(e.clientY < curAppSize.top){
+
+            CurApp.style.top = e.clientY + "px"
+            CurApp.style.height = (curAppSize.height) + (curAppSize.top - e.clientY) + "px"
+            
+
+
+            //drag down
+        } else if(e.clientY > curAppSize.top){
+
+            CurApp.style.top = e.clientY+ "px"
+            CurApp.style.height = (curAppSize.height) - (e.clientY - curAppSize.top) + "px"
+           
+        }
+
+
+
+
+        //drag left
+        if(e.clientX < curAppSize.left){
+
+            CurApp.style.left = e.clientX + "px"
+            CurApp.style.width = (curAppSize.width + (curAppSize.left - e.clientX)) + "px"
+            
+
+
+
+            //drag right
+        } else if(e.clientX > curAppSize.left){
+
+            CurApp.style.left = e.clientX + "px"
+            CurApp.style.width = (curAppSize.width +  (curAppSize.left - e.clientX)) + "px"
+            
+
+        }
+
+
+
+        CurApp.style.cursor = "nwse-resize"
+
+
+
 
         console.log('top left')
     }
@@ -479,30 +533,200 @@ function dragOnMDownDiagonal(e){
 
 
 
+
+
+
+
+
    //diagonal top right func
 
-   function DiagonalTOPright(){
 
+   function DiagonalTOPright(e){
+
+    e = e || window.event;
+    e.preventDefault();
+
+
+
+
+    //drag up
+ if(e.clientY < curAppSize.top){
+
+    CurApp.style.top = e.clientY + "px"
+    CurApp.style.height = (curAppSize.height) + (curAppSize.top - e.clientY) + "px"
+    
+
+
+    //drag down
+} else if(e.clientY > curAppSize.top){
+
+    CurApp.style.top = e.clientY+ "px"
+    CurApp.style.height = (curAppSize.height) - (e.clientY - curAppSize.top) + "px"
+    
+}
+
+
+
+
+
+//drag right
+if(e.clientX < curAppSize.right){
+
+    CurApp.style.left = curAppSize.left + "px"
+    CurApp.style.width = (curAppSize.width + ( e.clientX - curAppSize.right)) + "px"
+    
+
+
+
+    //drag left
+} else if(e.clientX > curAppSize.right){
+
+    CurApp.style.left = curAppSize.left + "px"
+    CurApp.style.width = (curAppSize.width +  (e.clientX - curAppSize.right)) + "px"
+    
+
+}
+
+
+
+
+
+CurApp.style.cursor = "nesw-resize"
     console.log('top right')
-   }
+
+
+    }
+
+
+
+
+
+
 
 
 
 
    //diagonal bottom left func
 
-   function DiagonalBOTTOMleft(){
 
+   function DiagonalBOTTOMleft(e){
+
+    e = e || window.event;
+    e.preventDefault();
+
+
+
+//drag up
+if(e.clientY < curAppSize.bottom){
+
+
+    CurApp.style.top = curAppSize.top
+    CurApp.style.height = (Math.trunc(curAppSize.height) - Math.trunc(curAppSize.bottom - e.clientY)) + "px"
+    
+    
+
+
+    //drag down
+} else if(e.clientY > curAppSize.bottom){
+    
+    
+    CurApp.style.top = curAppSize.top
+    CurApp.style.height = ((curAppSize.height) + (e.clientY-curAppSize.bottom)) + "px"
+    
+
+
+}
+
+
+
+
+     //drag left
+     if(e.clientX < curAppSize.left){
+
+        CurApp.style.left = e.clientX + "px"
+        CurApp.style.width = (curAppSize.width + (curAppSize.left - e.clientX)) + "px"
+        
+
+
+
+        //drag right
+    } else if(e.clientX > curAppSize.left){
+
+        CurApp.style.left = e.clientX + "px"
+        CurApp.style.width = (curAppSize.width +  (curAppSize.left - e.clientX)) + "px"
+        
+
+    }
+
+
+
+
+    CurApp.style.cursor = "nesw-resize"
     console.log('bottom left')
+
    }
+
+
+
+
 
 
 
 
    //diagonal bottom right func
 
-   function DiagonalBOTTOMright(){
 
+   function DiagonalBOTTOMright(e){
+
+    e = e || window.event;
+    e.preventDefault();
+
+    if(e.clientY < curAppSize.bottom){
+
+
+        CurApp.style.top = curAppSize.top
+        CurApp.style.height = (Math.trunc(curAppSize.height) - Math.trunc(curAppSize.bottom - e.clientY)) + "px"
+       
+        
+    
+    
+        //drag down
+    } else if(e.clientY > curAppSize.bottom){
+        
+        
+        CurApp.style.top = curAppSize.top
+        CurApp.style.height = ((curAppSize.height) + (e.clientY-curAppSize.bottom)) + "px"
+        
+    
+    
+    }
+
+
+
+
+    //drag right
+if(e.clientX < curAppSize.right){
+
+    CurApp.style.left = curAppSize.left + "px"
+    CurApp.style.width = (curAppSize.width + ( e.clientX - curAppSize.right)) + "px"
+    
+
+
+
+    //drag left
+} else if(e.clientX > curAppSize.right){
+
+    CurApp.style.left = curAppSize.left + "px"
+    CurApp.style.width = (curAppSize.width +  (e.clientX - curAppSize.right)) + "px"
+    
+
+}
+
+
+
+
+
+CurApp.style.cursor = "nwse-resize"
     console.log('bottom right')
 
    }
