@@ -174,6 +174,7 @@ function ResizeElement(CurApp){
         dragOnMDownLR()
         dragOnMDownDiagonal()
     }
+    
 
 
 
@@ -198,20 +199,20 @@ function ResizeElement(CurApp){
             if(e.clientY >= Math.trunc(curAppSize.top)  &&   e.clientY <= Math.trunc(curAppSize.top)+5){
                 //console.log('drag up')
                 document.onmousemove = TopLVLDrag
-                CurApp.style.cursor = "n-resize"
+                document.body.style.cursor = "n-resize"
 
 
                 //for bottom level
             } else if(e.clientY <= Math.trunc(curAppSize.bottom) && e.clientY >= Math.trunc(curAppSize.bottom)-7.5){
                 document.onmousemove = BottomLVLDrag
-                CurApp.style.cursor = "n-resize"
+                document.body.style.cursor = "n-resize"
 
             }
 
           
 
         }else {
-            CurApp.style.cursor = "default"
+            document.body.style.cursor = "default"
           }
 
 
@@ -235,16 +236,16 @@ function ResizeElement(CurApp){
     //for right level
     if((curAppSize.right-5) <= e.clientX && e.clientX <=  curAppSize.right ){
         document.onmousemove = RightLVLDrag
-        CurApp.style.cursor = "e-resize"
+        document.body.style.cursor = "e-resize"
         
 
         //for left level
     }else if(curAppSize.left <= e.clientX && e.clientX <= (curAppSize.left+5) ){
         document.onmousemove = LeftLVLDrag
-        CurApp.style.cursor = "e-resize"
+        document.body.style.cursor = "e-resize"
         
     } else {
-        CurApp.style.cursor = "default"
+        document.body.style.cursor = "default"
     }
 
 
@@ -268,7 +269,7 @@ function dragOnMDownDiagonal(e){
         if(e.clientX >= curAppSize.left && e.clientX <= (curAppSize.left+12)){
            document.onmousemove = DiagonalTOPleft
            document.onmouseup = CloseElDrag
-           CurApp.style.cursor = "nwse-resize"
+           document.body.style.cursor = "nwse-resize"
         }
 
     }
@@ -280,7 +281,7 @@ function dragOnMDownDiagonal(e){
         if(e.clientX <= curAppSize.right && e.clientX >= (curAppSize.right-12)){
            document.onmousemove = DiagonalTOPright
            document.onmouseup = CloseElDrag
-           CurApp.style.cursor = "nesw-resize"
+           document.body.style.cursor = "nesw-resize"
         }
 
     }
@@ -293,7 +294,7 @@ function dragOnMDownDiagonal(e){
         if(e.clientX >= curAppSize.left && e.clientX <= (curAppSize.left+12)){
            document.onmousemove = DiagonalBOTTOMleft
            document.onmouseup = CloseElDrag
-           CurApp.style.cursor = "nesw-resize"
+           document.body.style.cursor = "nesw-resize"
         }
 
     }
@@ -307,7 +308,7 @@ function dragOnMDownDiagonal(e){
         if(e.clientX <= curAppSize.right && e.clientX >= (curAppSize.right-12)){
            document.onmousemove = DiagonalBOTTOMright
            document.onmouseup = CloseElDrag
-           CurApp.style.cursor = "nwse-resize"
+           document.body.style.cursor = "nwse-resize"
         }
 
     }
@@ -354,7 +355,7 @@ function dragOnMDownDiagonal(e){
             
         }
 
-        CurApp.style.cursor = "n-resize"
+        document.body.style.cursor = "n-resize"
 
         console.log('Top Level drag')
     }
@@ -390,7 +391,7 @@ function dragOnMDownDiagonal(e){
 
         
         }
-        CurApp.style.cursor = "n-resize"
+        document.body.style.cursor = "n-resize"
 
         console.log('Bottom Level drag')
 
@@ -425,7 +426,7 @@ function dragOnMDownDiagonal(e){
 
         }
 
-        CurApp.style.cursor = "e-resize"
+        document.body.style.cursor = "e-resize"
 
         console.log('right Level drag')
 
@@ -462,7 +463,7 @@ function dragOnMDownDiagonal(e){
 
         }
 
-        CurApp.style.cursor = "e-resize"
+        document.body.style.cursor = "e-resize"
         console.log('left Level drag')
 
 
@@ -522,7 +523,7 @@ function dragOnMDownDiagonal(e){
 
 
 
-        CurApp.style.cursor = "nwse-resize"
+        document.body.style.cursor = "nwse-resize"
 
 
 
@@ -591,7 +592,7 @@ if(e.clientX < curAppSize.right){
 
 
 
-CurApp.style.cursor = "nesw-resize"
+document.body.style.cursor = "nesw-resize"
     console.log('top right')
 
 
@@ -661,7 +662,7 @@ if(e.clientY < curAppSize.bottom){
 
 
 
-    CurApp.style.cursor = "nesw-resize"
+    document.body.style.cursor = "nesw-resize"
     console.log('bottom left')
 
    }
@@ -726,7 +727,7 @@ if(e.clientX < curAppSize.right){
 
 
 
-CurApp.style.cursor = "nwse-resize"
+document.body.style.cursor = "nwse-resize"
     console.log('bottom right')
 
    }
@@ -754,7 +755,7 @@ function CloseElDrag(){
     document.onmouseup = null;
     document.onmousemove = null;
     document.onmousedown = null
-    CurApp.style.cursor = "default"
+    document.body.style.cursor = "default"
 }
 
     
