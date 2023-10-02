@@ -2,7 +2,7 @@ var firstApp = document.createElement('div')
     firstApp.classList.add('doors98apps')
 var TaskbarIconRow = document.querySelectorAll('.dropintaskbar')
 
-
+var BODY = document.getElementsByTagName('body')
 
 
 
@@ -147,7 +147,22 @@ if(window.innerHeight > e.clientY && e.clientY > 2){
 
 
 
+
+
+
+
+
+
+
 //resize apps
+
+
+
+
+
+
+
+
 
 
 
@@ -174,11 +189,7 @@ function ResizeElement(CurApp){
         dragOnMDownLR()
         dragOnMDownDiagonal()
     }
-    CurApp.onmouseover = function(){
-       mouseHoverTB()
-       mouseHoverLR()
-       mouseHoverDiagonal()
-    }
+    
 
 
 
@@ -331,7 +342,16 @@ function dragOnMDownDiagonal(e){
 
 
 
+
+
     //function to drag element depending on if it goes up or down or left or right  or diagonal
+
+
+
+
+
+
+
 
 
 
@@ -759,42 +779,10 @@ function CloseElDrag(){
 
 
 
-//HOVER
-
-
-//when user hovers over edges
 
 
 
 
-
-
-
-
-//top or bottom
-function mouseHoverTB(){
-
-
-
-}
-
-
-
-//left or right
-function mouseHoverLR(){
-
-
-
-}
-
-
-
-//diagonal
-function mouseHoverDiagonal(){
-
-
-    
-}
 
 
 

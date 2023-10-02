@@ -169,8 +169,7 @@ justify-content: center;
     bottom: 0;
     left: 0;
     writing-mode: vertical-lr;
-    -webkit-transform: rotate(-180deg);
-    -moz-transform: rotate(-180deg);
+    
     font-size: 150%;
     width: 15%;
     height: 100%;
@@ -315,4 +314,25 @@ float: left;
 }
 .minimizedApp{
     display: none;
+}
+
+
+
+.adjustTB{
+cursor: n-resize;
+
+}
+
+.adjustLR{
+    cursor: e-resize;
+    
+}
+
+.adjustDiagonalLeftBotRightTop{
+    cursor: nesw-resize;
+    
+}
+.adjustDiagonalRightBotLeftTop{
+    cursor: nwse-resize;
+    
 }
