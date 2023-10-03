@@ -33,13 +33,7 @@ function HoverElement(CurApp){
         
     });
     
-    CurApp.addEventListener('mouseleave', function () {
-        for(let i = 0; i < document.querySelectorAll('.icon-text').length; i++){
-            document.querySelectorAll('.icon-text')[i].innerText = "mouse just left"
-        }
-        
-    
-});
+   
 
 
 
