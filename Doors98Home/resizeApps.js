@@ -189,11 +189,22 @@ function ResizeElement(CurApp){
         dragOnMDownLR()
         dragOnMDownDiagonal()
 
-        mouseHoverTB();
-        mouseHoverLR();
-        mouseHoverDiagonal();
     }
-    
+    CurApp.onmouseover = function(){
+        CurApp.onmousemove = function(){
+
+        mouseHoverTB()
+        mouseHoverLR()
+        mouseHoverDiagonal()
+
+        }
+        
+    }
+    CurApp.onmouseleave = function(){
+        
+        document.body.style.cursor = "default"
+        
+    }
 
 
 
@@ -348,7 +359,15 @@ function dragOnMDownDiagonal(e){
 
 
 
+
+
+    //RESIZE FUNCTIONS
     //function to drag element depending on if it goes up or down or left or right  or diagonal
+
+
+
+
+
 
 
 
@@ -767,87 +786,127 @@ document.body.style.cursor = "nwse-resize"
 
 
 
-//hover
+
+
+
+
+
+
+
+//HOVER
+
+// on mouse hover
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//hover top or bottom
 
 function mouseHoverTB(e){
+    
     e = e || window.event;
     e.preventDefault();
 
-//for top/bottom level
-      if(Math.trunc(curAppSize.left) <= e.clientX <= Math.trunc(curAppSize.right)){
+    if(Math.trunc(curAppSize.left) <= e.clientX <= Math.trunc(curAppSize.right)){
 
-         //for top level
-        if(e.clientY >= Math.trunc(curAppSize.top)  &&   e.clientY <= Math.trunc(curAppSize.top)+5){
-            //console.log('drag up')
+        //for top level
+       if(e.clientY >= Math.trunc(curAppSize.top) && e.clientY <= Math.trunc(curAppSize.top)+7.5){
            
-            document.body.style.cursor = "n-resize"
+        
+        CurApp.style.cursor = "n-resize"
 
 
-            //for bottom level
-        } else if(e.clientY <= Math.trunc(curAppSize.bottom) && e.clientY >= Math.trunc(curAppSize.bottom)-7.5){
-            
-            document.body.style.cursor = "n-resize"
+        //for bottom level
+       } else if(e.clientY <= Math.trunc(curAppSize.bottom) && e.clientY >= Math.trunc(curAppSize.bottom)-7.5){
+        
 
-        }
+        CurApp.style.cursor = "n-resize"
 
-      
+        
+       }else {
+        CurApp.style.cursor = "default"
+    }
 
     }else {
-        document.body.style.cursor = "default"
-      }
+        CurApp.style.cursor = "default"
+    }
+
+     
+
+   
 
     
 }
 
 
 
-
+//hover left or right
 
 
 function mouseHoverLR(e){
     e = e || window.event;
     e.preventDefault();
 
+    if(Math.trunc(curAppSize.top) <= e.clientY <= Math.trunc(curAppSize.bottom)){
 
-   if(Math.trunc(curAppSize.top) <= e.clientY <= Math.trunc(curAppSize.bottom)){
 
-
-    //for right level
-    if((curAppSize.right-5) <= e.clientX && e.clientX <=  curAppSize.right ){
-        
-        document.body.style.cursor = "e-resize"
-        
-
-        //for left level
-    }else if(curAppSize.left <= e.clientX && e.clientX <= (curAppSize.left+5) ){
-        
-        document.body.style.cursor = "e-resize"
-        
-    } 
-
+        //for right level
+        if((curAppSize.right-5) <= e.clientX && e.clientX <=  curAppSize.right ){
+            
+            CurApp.style.cursor = "e-resize"
+            
+    
+            //for left level
+        }else if(curAppSize.left <= e.clientX && e.clientX <= (curAppSize.left+5) ){
+            
+            CurApp.style.cursor = "e-resize"
+            
+        } else {
+            CurApp.cursor = "default"
+        }
+    
+    
+       
+       } else {
+        CurApp.cursor = "default"
+    }
    
-   }else {
-    document.body.style.cursor = "default"
-}
 }
 
 
 
 
-
+//hover on diagonals
 
 function mouseHoverDiagonal(e){
 
     e = e || window.event;
     e.preventDefault();
 
-    //top left
-    if(e.clientY >= curAppSize.top && e.clientY <= (curAppSize.top+12)){
+ 
+    
+     //top left
+     if(e.clientY >= curAppSize.top && e.clientY <= (curAppSize.top+12)){
         if(e.clientX >= curAppSize.left && e.clientX <= (curAppSize.left+12)){
            
-           document.body.style.cursor = "nwse-resize"
+            CurApp.style.cursor = "nwse-resize"
+        } else {
+            CurApp.cursor = "default"
         }
 
+    } else {
+        CurApp.cursor = "default"
     }
 
 
@@ -856,9 +915,13 @@ function mouseHoverDiagonal(e){
     if(e.clientY >= curAppSize.top && e.clientY <= (curAppSize.top+12)){
         if(e.clientX <= curAppSize.right && e.clientX >= (curAppSize.right-12)){
            
-           document.body.style.cursor = "nesw-resize"
+            CurApp.style.cursor = "nesw-resize"
+        } else {
+            CurApp.cursor = "default"
         }
 
+    } else {
+        CurApp.cursor = "default"
     }
 
 
@@ -868,9 +931,13 @@ function mouseHoverDiagonal(e){
     if(e.clientY <= curAppSize.bottom && e.clientY >= (curAppSize.bottom-12)){
         if(e.clientX >= curAppSize.left && e.clientX <= (curAppSize.left+12)){
            
-           document.body.style.cursor = "nesw-resize"
+            CurApp.style.cursor = "nesw-resize"
+        } else {
+            CurApp.cursor = "default"
         }
 
+    } else {
+        CurApp.cursor = "default"
     }
 
 
@@ -881,21 +948,17 @@ function mouseHoverDiagonal(e){
     if(e.clientY <= curAppSize.bottom && e.clientY >= (curAppSize.bottom-12)){
         if(e.clientX <= curAppSize.right && e.clientX >= (curAppSize.right-12)){
            
-           document.body.style.cursor = "nwse-resize"
+            CurApp.style.cursor = "nwse-resize"
+        } else {
+            CurApp.cursor = "default"
         }
 
+    } else {
+        CurApp.cursor = "default"
     }
+
+
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -915,6 +978,21 @@ function mouseHoverDiagonal(e){
 
 
     //function to stop dragging when mouse up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function CloseElDrag(){
     document.onmouseup = null;
