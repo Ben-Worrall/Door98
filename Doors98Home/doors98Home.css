@@ -64,6 +64,7 @@ background: url('Doors98HomeScreenBackground.png') no-repeat center center fixed
 .iconBody{
     width: 100%;
     height: 100%;
+    
     text-align:center;
     display:block;
     background-color: transparent;
@@ -72,7 +73,7 @@ background: url('Doors98HomeScreenBackground.png') no-repeat center center fixed
     float:left;
     position: relative;
    text-align: center;
-   
+   overflow:hidden;
 }
 
 .iconBody:hover{
@@ -83,18 +84,18 @@ background: url('Doors98HomeScreenBackground.png') no-repeat center center fixed
 .icon-homescreen-img{
     pointer-events: none;
     width: 65%;
-   
+   height: 70%;
     
 }
 .icon-text{
-    position: absolute;
+    
     bottom: 0;
     text-align: center;
     left: 0;
     right: 0;
     color: white;
     pointer-events: none;
-    
+    height: 30%;
 }
 
 

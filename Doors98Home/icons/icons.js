@@ -172,8 +172,32 @@ for(let i = 0; i < icons.length; i++){
     icons[i].addEventListener('click', ()=>{
         icons[i].style.backgroundColor = "rgba(132, 134, 134, 0.7)"
         icons[i].style.outline = "0.1vh solid rgb(169, 170, 170)"
+        icons[i].style.overflow = "visible"
+        icons[i].style.height = "max-content"
     })
+    
 }
+
+//if u double click on an icon then load that app
+
+for(let i = 0; i < icons.length; i++){
+  icons[i].addEventListener('dblclick', ()=>{
+      
+  })
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -188,6 +212,8 @@ document.onclick = function (event) {
        
         icons[i].style.backgroundColor = ""
         icons[i].style.outline = ""
+        icons[i].style.overflow = "hidden"
+        icons[i].style.height = "100%"
         contextMenu.style.visibility = "hidden"
         
 
