@@ -11,7 +11,7 @@ function CheckForAppsHover(){
     }
 
 
-setInterval(CheckForAppsHover, 1);
+
 }; CheckForAppsHover();
 
 

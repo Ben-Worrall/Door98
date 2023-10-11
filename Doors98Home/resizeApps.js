@@ -18,10 +18,11 @@ function CheckForApps(){
     let curAppsAll = document.querySelectorAll('.dragableForApps')
     for(let i =0; i< curAppsAll.length; i++){
         dragElement(curAppsAll[i])
+        ResizeElement(curAppsAll[i])
     }
 
 
-setInterval(CheckForApps, 1);
+//setInterval(CheckForApps, 1);
 }; CheckForApps();
 ;
 
@@ -166,16 +167,7 @@ if(window.innerHeight > e.clientY && e.clientY > 2){
 
 
 
-function CheckForApps2(){
-    let curAppsAll2 = document.querySelectorAll('.doors98apps')
-    for(let i =0; i< curAppsAll2.length; i++){
-        ResizeElement(curAppsAll2[i])
-        
-        
-    }
 
-setInterval(CheckForApps2, 1);
-}; CheckForApps2();
 
 
 
@@ -190,21 +182,8 @@ function ResizeElement(CurApp){
         dragOnMDownDiagonal()
 
     }
-    CurApp.onmouseover = function(){
-        CurApp.onmousemove = function(){
-
-        mouseHoverTB()
-        mouseHoverLR()
-        mouseHoverDiagonal()
-
-        }
-        
-    }
-    CurApp.onmouseleave = function(){
-        
-        document.body.style.cursor = "default"
-        
-    }
+    
+    
 
 
 

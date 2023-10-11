@@ -182,10 +182,38 @@ for(let i = 0; i < icons.length; i++){
 
 for(let i = 0; i < icons.length; i++){
   icons[i].addEventListener('dblclick', ()=>{
-      
+
+
+    var newApp = document.createElement('div')
+    newApp.classList.add('doors98apps')
+    newApp.style.display = ""
+
+
+    //determine which app it is
+
+
+
+     document.getElementById('doorsappsholder').appendChild(newApp)
+    
+
+    
+
+
+
+
+
+
+
+  
   })
   
+
+
+
+
+
 }
+
 
 
 

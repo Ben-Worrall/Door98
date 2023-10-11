@@ -42,7 +42,7 @@ function changebackgroundcolorforicon(){
         
     }
 
-    setInterval(changebackgroundcolorforicon, 1);
+    //setInterval(changebackgroundcolorforicon, 1);
 }; changebackgroundcolorforicon();
 
 
@@ -77,7 +77,7 @@ function CurrentOpenAppIcon(){
 
 
 
-    setInterval(CurrentOpenAppIcon, 1);
+    //setInterval(CurrentOpenAppIcon, 1);
 }; CurrentOpenAppIcon();
 
 
