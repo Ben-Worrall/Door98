@@ -27,7 +27,8 @@ document.getElementById('hour-min-am-pm').innerText = time.toLocaleString('en-US
 
 setInterval(timeTaskBarUpdate, 50000)
 
-}timeTaskBarUpdate()
+}
+//timeTaskBarUpdate()
 
 
 

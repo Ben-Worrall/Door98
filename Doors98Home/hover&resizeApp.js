@@ -1,32 +1,21 @@
-var firstApp = document.createElement('div')
-    firstApp.classList.add('doors98apps')
-var TaskbarIconRow = document.querySelectorAll('.dropintaskbar')
-
-var BODY = document.getElementsByTagName('body')
 
 
 
 
 
 
-document.onmousemove = () => {
-    let curAppsAll = document.querySelectorAll('.dragableForApps')
-    for(let i =0; i< curAppsAll.length; i++){
-        
-        //ResizeElement(curAppsAll[i])
+
+
+
+document.addEventListener('mousemove', () => {
+    let curAppsAll2 = document.querySelectorAll('.doors98apps')
+    for(let i =0; i< curAppsAll2.length; i++){
+        ResizeElement(curAppsAll2[i])
     }
 
 
 
-}; 
-
-
-
-//resize apps
-
-
-
-
+}); 
 
 function ResizeElement(CurApp){
 
@@ -39,8 +28,21 @@ function ResizeElement(CurApp){
         dragOnMDownDiagonal()
 
     }
-    
-    
+    CurApp.onmouseover = function(){
+        CurApp.onmousemove = function(){
+
+        mouseHoverTB()
+        mouseHoverLR()
+        mouseHoverDiagonal()
+
+        }
+        
+    }
+    CurApp.onmouseleave = function(){
+        
+        document.body.style.cursor = "default"
+        
+    }
 
 
 
@@ -832,9 +834,9 @@ function mouseHoverDiagonal(e){
 
 function CloseElDrag(){
     document.onmouseup = null;
-    //document.onmousemove = null;
+    document.onmousemove = null;
     document.onmousedown = null
-     
+    document.body.style.cursor = "default"
 }
 
 
@@ -843,28 +845,3 @@ function CloseElDrag(){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
