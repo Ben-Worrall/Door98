@@ -10,7 +10,7 @@ var TaskbarIconRow = document.querySelectorAll('.dropintaskbar')
 
 
 
-minimize.onclick = function(){
+minimize.addEventListener('click',  function(){
     //minimize app (hide it)
     for(let j = 0; j < appList.length; j++){
         if(appList[j].classList.contains("InternetExplorer")){
@@ -20,13 +20,13 @@ minimize.onclick = function(){
         }
     }
     
-}
+})
 exit.onclick = function(){
 
 //remove icon in task bar
 for(let i = 0; i < TaskbarIconRow.length; i++){
     if(TaskbarIconRow[i].childNodes[0] !== undefined){
-        if(TaskbarIconRow[i].childNodes[1].src == document.getElementById('internetexplorer-icon-startmenu').src){
+        if(TaskbarIconRow[i].childNodes[1].src = "/doors98Home/iconsIMG/InternetExplorer-icon.png"){
            TaskbarIconRow[i].childNodes[1].src = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="
            TaskbarIconRow[i].childNodes[1].alt=""
            TaskbarIconRow[i].childNodes[1].classList.remove('imgForIconInTaskBar')

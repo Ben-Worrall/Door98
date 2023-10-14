@@ -178,30 +178,40 @@ for(let i = 0; i < icons.length; i++){
     
 }
 
+
+
+
 //if u double click on an icon then load that app
 
 for(let i = 0; i < icons.length; i++){
-  icons[i].addEventListener('dblclick', ()=>{
+  icons[i].addEventListener('dblclick', (e)=>{
 
 
     var newApp = document.createElement('div')
     newApp.classList.add('doors98apps')
     newApp.style.display = ""
 
-
+    
     //determine which app it is
+    if(icons[i].childNodes[1].alt == "InternetExplorer"){
+      fetch('doors98Apps/InternetExplorer/InternetExplorer.html')
+      .then(res=>res.text())
+      .then(data=>{
+        newApp.innerHTML = data
+      })
+    }
 
-
-
+   newApp.classList.add('InternetExplorer')
      document.getElementById('doorsappsholder').appendChild(newApp)
-    
+     let script= document.createElement("script");
+     script.src = "doors98Apps/InternetExplorer/InternetExplorer.js"
+     Body.appendChild( script )
 
     
-
-
-
-
-
+    
+        
+      
+    
 
 
   

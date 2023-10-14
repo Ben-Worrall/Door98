@@ -24,6 +24,7 @@ var TaskbarIconRow = document.querySelectorAll('.dropintaskbar')
 //internet explorer
 
 function internetExplorerLoad(e){
+    console.log(e)
     document.getElementById('StartMenu-popup-second').style.display = "none"
 //console.log(e.parentNode.childNodes[1].childNodes[1].src)
     firstApp.style.display=""
@@ -41,10 +42,6 @@ function internetExplorerLoad(e){
 script.src = "doors98Apps/InternetExplorer/InternetExplorer.js"
 Body.appendChild( script )
 MenuPopup.style.display = "none"
-
-
-
-//append icon to taskbar
 
 
 
@@ -68,6 +65,7 @@ for(let i = 0; i < TaskbarIconRow.length; i++){
     
     
 }
+
 
 
 
